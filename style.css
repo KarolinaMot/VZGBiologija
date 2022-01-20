@@ -1,0 +1,156 @@
+h2 {
+    margin-top: 10%;
+    text-align: center;
+}
+.titleName{
+    color: whitesmoke;
+    font-size: 50px;
+}
+h3 {
+    color: whitesmoke;
+}
+
+label {
+    font-size: 18px;
+}
+
+.parallax {
+    background-image: url("Images/cover.jpg");
+    min-height: 1000px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.3);
+    background-size: cover;
+    padding-top: 150px;
+}
+
+.head{
+    background-image: url("Images/dotFade.png");
+    height: 30%;
+    background-size: contain;
+}
+
+.header {
+    background-color: #262626;
+    font-size: 20px;
+    color: white;
+    padding: 0.5%;
+    height:4%;
+}
+
+.blackBckgrnd {
+    background-color: #262626;
+    color: whitesmoke;
+    height: 5000px;
+}
+
+.darkGrayBckgrnd {
+    background-color: #41414f;
+    padding: 20px;
+    color: whitesmoke;
+}
+
+.adminBackground {
+    background-image: url("Images/Klases2.jpg");
+    min-height: 200px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
+    background-size: cover;
+    border: 3px solid white;
+    padding: 5%;
+    color: whitesmoke;
+}
+
+
+.icon{
+    height: 18%;
+}
+
+.centerFont {
+    text-align: center
+}
+
+.center{
+    margin-left: 39%;
+}
+.abrilFont {
+    font-family: 'Abril Fatface', cursive;
+}
+
+.verticalMiddle{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.klase {
+    background-image: url("Images/Klases2.jpg");
+    min-height: 200px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    background-size: cover;
+    padding-top: 7%;
+    text-align: center;
+}
+
+.skyriai {
+    background-image: url("Images/Konspektas.jpg");
+    min-height: 200px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    background-size: cover;
+    padding-top: 7%;
+    text-align: center;
+}
+
+.cardTop {
+    background-image: url("Images/cover.jpg");
+    min-height: 100px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    background-size: cover;
+    padding-top: 2%;
+    text-align: center;
+}
+
+.cardBackground {
+    background-color: #202124;
+    color: whitesmoke;
+}
+
+.cardPadding {
+    padding: 10px;
+}
+
+.roundedCorners {
+    border-radius: 25px;
+    border-color: #6a696e;
+}
+
+.vl {
+    background-color: whitesmoke;
+    width: 5%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.marginleft {
+    margin-left: 2%;
+}
+
+.marginTop {
+    margin-top: 2%;
+}
+
+.widewidth {
+    width: 100%;
+}
