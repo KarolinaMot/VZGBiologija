@@ -41,41 +41,6 @@ function InsertToSkyrius($pavadinimas, $conn){
 	}
 }
 
-function FillHeader($conn){
-	$result = SkyriuArray($conn);
-
-	if(count($result)<=4){
-		for($i=0; $i<count($result); $i++){
-			echo '<div class="col" style=" margin-left:2%;"><a style="color: white;" href="skyriai.php?skyrius='.$result[$i].'">'.$result[$i].'</a></div>';
-		}
-	}
-	else{
-		for($i=0; $i<4; $i++){
-			echo '<div class="col" style=" margin-left:2%;"><a style="color: white;" href="skyriai.php?skyrius='.$result[$i].'">'.$result[$i].'</a></div>';
-		}
-		echo '
-			<div class="dropdown">
-			  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				Dropdown button
-			  </button>
-			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<a class="dropdown-item" href="#">Action</a>
-				<a class="dropdown-item" href="#">Another action</a>
-				<a class="dropdown-item" href="#">Something else here</a>
-			  </div>
-			</div>';
-	}
-
-
-	if(!isset($_SESSION['prisijunges']) || !$_SESSION['prisijunges']){
-		echo '<div class="col" style=" margin-left:2%;"><a style="color: white;" href="prisijungti.php">Prisijungti</a></div>';
-
-	}
-	else if($_SESSION['prisijunges']){
-		echo '<div class="col" style=" margin-left:2%;"><a style="color: white;" href="admin.php">Admin</a></div>';
-
-	}
-}
 
 function SelectID($conn, $pavadinimas){
 	$sql = "SELECT ID FROM skyrius WHERE Pavadinimas='".$pavadinimas."'";

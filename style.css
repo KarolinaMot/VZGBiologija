@@ -2,6 +2,7 @@ h2 {
     margin-top: 10%;
     text-align: center;
 }
+
 .titleName{
     color: whitesmoke;
     font-size: 50px;
@@ -14,6 +15,18 @@ label {
     font-size: 18px;
 }
 
+.header {
+    background-color: #262626;
+    font-size: 20px;
+    color: white;
+    height: 50px;
+}
+.head {
+    background-image: url("Images/dotFade.png");
+    background-size: contain;
+    margin-top: 15%;
+    
+}
 .parallax {
     background-image: url("Images/cover.jpg");
     min-height: 1000px;
@@ -25,24 +38,19 @@ label {
     padding-top: 150px;
 }
 
-.head{
-    background-image: url("Images/dotFade.png");
-    height: 30%;
-    background-size: contain;
+.nameStyle {
+    color: whitesmoke;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Rubik Mono One', sans-serif;
+    text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+    margin-bottom: 18%;
+    margin-left: 34%;
 }
-
-.header {
-    background-color: #262626;
-    font-size: 20px;
-    color: white;
-    padding: 0.5%;
-    height:4%;
-}
-
 .blackBckgrnd {
     background-color: #262626;
     color: whitesmoke;
-    height: 5000px;
+    width:100%;
 }
 
 .darkGrayBckgrnd {
@@ -63,7 +71,6 @@ label {
     padding: 5%;
     color: whitesmoke;
 }
-
 
 .icon{
     height: 18%;
