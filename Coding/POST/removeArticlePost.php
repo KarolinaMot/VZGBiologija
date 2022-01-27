@@ -4,9 +4,8 @@
 	if(isset($_POST['trinti'])){
 		$pavadinimas = $_POST['pavadinimas'];
 		DeletePost($conn, $pavadinimas);
-		echo "<script type='text/javascript'>
-				alert('Postas sėkmingai ištrintas.');
-				location='../../admin.php';
-				</script>";
+	}
+	else{
+		echo "<script>alert('Kodo klaida')</script>";
 	}
 ?>

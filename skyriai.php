@@ -24,7 +24,7 @@
 						<h3>Pirmokų konspektai</h3>
 						<div class="row darkGrayBckgrnd roundedCorners">
 							<?php 
-								FillKonspektusByKlase($conn, "Pirmokams");
+								FillKonspektusBySkyrius($conn, $_GET['skyrius'],  "Pirmokams" );
 							?>
 						</div>
 					<?php }}?>
@@ -43,7 +43,7 @@
 						<h3>Antrokų konspektai</h3>
 						<div class="row darkGrayBckgrnd roundedCorners">
 							<?php 
-								FillKonspektusByKlase($conn, "Antrokams");
+								FillKonspektusBySkyrius($conn, $_GET['skyrius'],  "Antrokams" );
 							?>
 						</div>
 					<?php }}?>
@@ -62,7 +62,7 @@
 						<h3>Trečiokų konspektai</h3>
 						<div class="row darkGrayBckgrnd roundedCorners">
 							<?php 
-								FillKonspektusByKlase($conn, "Trečiokams");
+								FillKonspektusBySkyrius($conn, $_GET['skyrius'],  "Treciokams" );
 							?>
 						</div>
 					<?php }}?>
@@ -81,7 +81,7 @@
 						<h3>Ketvirtokų konspektai</h3>
 						<div class="row darkGrayBckgrnd roundedCorners">
 							<?php 
-								FillKonspektusByKlase($conn, "Ketvirtokams");
+								FillKonspektusBySkyrius($conn, $_GET['skyrius'],  "Ketvirtokams", );
 							?>
 						</div>
 					<?php }}?>

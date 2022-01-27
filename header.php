@@ -1,4 +1,6 @@
 ﻿<?php
+	include_once "Coding/SkyriusCode.php";
+
 	function FillHeader($conn){
 		$result = SkyriuArray($conn);
 
@@ -52,10 +54,14 @@
 		<title>Biologija</title>
 	</head>
 
-	<div class="header">
+	<div class="header" style="background-color: rgba(38, 38, 38, 0.9);
+    font-size: 20px;
+    color: white;
+    height: 50px;
+	margin-top: -8%">
 		<div class="container">
-			<div class="row" style="margin-top:-15.8%; padding-top: 0.5%;" >
-				<div class="col-1">
+			<div class="row" >
+				<div class="col-1" style="margin-top: -34px;">
 					<a href="pradzia.php">
 						<img src="Images/icon.png" class="icon">
 					</a>
@@ -67,7 +73,15 @@
 		</div>
 	</div>
 
-	<div class="row head">
-		<h1 class="nameStyle">VŽG BIOLOGIJA</h1>
+	<div class="row" style="background-image: url('Images/dotFade.png');
+    background-size: contain;
+    margin-top: 15%;">
+	<h1 style="color: whitesmoke;
+		font-size: 50px;
+		text-align: center;
+		font-family: 'Rubik Mono One', sans-serif;
+		text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+		margin-bottom: 18%;
+		margin-left: 34%;">VŽG BIOLOGIJA</h1>
 	</div>
 </html>

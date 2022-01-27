@@ -69,7 +69,6 @@ function FillKonspektusBySkyrius($conn, $skyrius, $klase){
     $result = SearchBySkyrius($conn, $skyrius);
 
 	while($row = $result->fetch_assoc()){
-		echo "<script>alert(".$klase.")</script>";
 		if($row["Klase"] == $klase){
 			echo "<div class='card cardPadding roundedCorners cardBackground col-3'>
 			  <div class='card-img-top cardTop marginTop roundedCorners' alt='Card image cap'><h2>".$row['Pavadinimas']."</h2></div>
@@ -83,7 +82,6 @@ function FillKonspektusBySkyrius($conn, $skyrius, $klase){
 		}
 	}
 }
-
 function DeletePost($conn, $pavadinimas){
 
 	$ID = SelectPostasID($conn, $pavadinimas);
@@ -92,9 +90,13 @@ function DeletePost($conn, $pavadinimas){
 
 	if ($conn->query($sql) === TRUE) {
 		unlink($filename);
-	    echo "<script>alert('Postas ištrintas')</script>";
+	    		echo "<script type='text/javascript'>
+				alert('Postas sėkmingai ištrintas.');
+				location='../../admin.php';
+				</script>";
 	} else {
-	  echo "<script>alert('Postas nebuvo istrintas: '".$conn->error.")</script>";
+	  echo "<script>alert('Postas nebuvo istrintas: '".$conn->error.");
+				location='../../admin.php';</script>";
 	}
 }
 

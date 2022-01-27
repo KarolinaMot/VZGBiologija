@@ -6,7 +6,7 @@
 			<div class="container-fluid blackBckgrnd" height="100%" width="100%" style="padding-bottom:15%;">
 				<div class="container">
 					<h3 class="centerFont">Prisijungti</h3>
-					<div class="row center" >
+					<div class="row" style=" margin-left: 39%;" >
 						<form action="Coding/POST/prisijungimasPost.php" method="post">
 							<div class="roundedCorners darkGrayBckgrnd">
 								<div class="form-group">
