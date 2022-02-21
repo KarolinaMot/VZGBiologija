@@ -70,16 +70,30 @@ function FillKonspektusBySkyrius($conn, $skyrius, $klase){
 
 	while($row = $result->fetch_assoc()){
 		if($row["Klase"] == $klase){
-			echo "<div class='card cardPadding roundedCorners cardBackground col-3'>
-			  <div class='card-img-top cardTop marginTop roundedCorners' alt='Card image cap'><h2>".$row['Pavadinimas']."</h2></div>
-			  <div class='card-body'>
-				<h5 class='card-title'>".$row['Pavadinimas']."</h5>
-				<p class='card-text'><b>Klasė: </b>".$row['Klase']."</p>
-				<p class='card-text'><b>Skyrius: </b>".$skyrius."</p>
-				<a href='article.php?article=".$row['Pavadinimas']."' class='btn btn-dark' style='Width:100%;'>Plačiau</a>
-			  </div>
-			</div>";
-		}
+			if(!$_SESSION['prisijunges']){
+				echo "<div class='card cardPadding roundedCorners cardBackground col-3'>
+				  <div class='card-img-top cardTop marginTop roundedCorners' alt='Card image cap'><h2>".$row['Pavadinimas']."</h2></div>
+				  <div class='card-body'>
+					<h5 class='card-title'>".$row['Pavadinimas']."</h5>
+					<p class='card-text'><b>Klasė: </b>".$row['Klase']."</p>
+					<p class='card-text'><b>Skyrius: </b>".$skyrius."</p>
+					<a href='article.php?article=".$row['Pavadinimas']."' class='btn btn-dark' style='Width:100%;'>Plačiau</a>
+				  </div>
+				</div>";
+			}	
+			else{
+				echo "<div class='card cardPadding roundedCorners cardBackground col-3'>
+				  <div class='card-img-top cardTop marginTop roundedCorners' alt='Card image cap'><h2>".$row['Pavadinimas']."</h2></div>
+				  <div class='card-body'>
+					<h5 class='card-title'>".$row['Pavadinimas']."</h5>
+					<p class='card-text'><b>Klasė: </b>".$row['Klase']."</p>
+					<p class='card-text'><b>Skyrius: </b>".$skyrius."</p>
+					<a href='article.php?article=".$row['Pavadinimas']."' class='btn btn-dark' style='Width:100%;'>Plačiau</a>
+					<a href='Coding/POST/removeArticlePost?article=".$row['Pavadinimas']."' class='btn btn-danger' style='Width:100%; margin-top:10px;'>Trinti</a>
+				  </div>
+				</div>";
+			}
+		}			
 	}
 }
 function DeletePost($conn, $pavadinimas){
@@ -92,11 +106,11 @@ function DeletePost($conn, $pavadinimas){
 		unlink($filename);
 	    		echo "<script type='text/javascript'>
 				alert('Postas sėkmingai ištrintas.');
-				location='../../admin.php';
+				location='../../pradzia.php';
 				</script>";
 	} else {
 	  echo "<script>alert('Postas nebuvo istrintas: '".$conn->error.");
-				location='../../admin.php';</script>";
+				location='../../pradzia.php';</script>";
 	}
 }
 

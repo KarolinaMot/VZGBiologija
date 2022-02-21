@@ -9,6 +9,13 @@
 			<div class="container-fluid blackBckgrnd" height="100%" width="100%">
 				<div class="container">
 					<?php 
+						$result2 = SearchByPavadinimas($conn, $_GET['skyrius']);
+						if($result2==null){
+							echo "<script type='text/javascript'>
+								alert('Šitas skyrius dar neturi jokių konspektų.');
+								location='pradzia.php';
+								</script>";
+						}
 						$result = SearchByClass($conn, "Pirmokams");
 						$tinkamas = false;
 						$skyriausID = SelectID($conn, $_GET['skyrius']);

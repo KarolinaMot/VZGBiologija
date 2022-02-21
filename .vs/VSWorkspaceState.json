@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\Coding",
-    "\\Coding\\POST"
+    "\\Coding\\POST",
+    "\\PdfViewer",
+    "\\PdfViewer\\web",
+    "\\PdfViewer\\web\\Uploads"
   ],
-  "SelectedNode": "\\prisijungti.php",
+  "SelectedNode": "\\header.php",
   "PreviewInSolutionExplorer": false
 }
