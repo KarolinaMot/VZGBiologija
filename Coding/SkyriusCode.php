@@ -89,13 +89,13 @@ function FillBody($conn){
 		echo '<div class="row">';
 		for($i=0; $i<4; $i++){
 			if($i !=0){
-				echo '<div class="col skyriai margintop marginleft roundedCorners">
+				echo '<div class="col skyriai marginleft roundedCorners">
 					<h3><a style="color: white;" href="skyriai.php?skyrius='.$result[$sk].'">'.strtoupper($result[$sk]).'</a></h3>
 				</div>';
 				$sk++;
 			}
 			else{
-				echo '<div class="col skyriai margintop roundedCorners">
+				echo '<div class="col skyriai roundedCorners">
 					<h3><a style="color: white;" href="skyriai.php?skyrius='.$result[$sk].'">'.strtoupper($result[$sk]).'</a></h3>
 				</div>';
 				$sk++;
@@ -109,7 +109,36 @@ function FillBody($conn){
 			break;
 		}
 	}
+}
 
+function FillNavBar($conn, $number){
+	$array = SkyriuArray($conn);
+	if(count($array)<=$number){
+		for($i=0; $i<count($array); $i++){
+			echo "<div class='col'><a class='navText' href='skyriai.php?skyrius=".$array[$i]."'>".$array[$i]."</a></div>";
+		}
+	}
+	else{
+		for($i=0; $i<$number; $i++){
+			echo '<div class="col"><a class="navText" font-size:1.5vw;" href="skyriai.php?skyrius='.$array[$i].'">'.$array[$i].'</a></div>';
+		}
+		echo '
+			<div class="dropdown col">
+			  <a class="btn btn-dark dropdown-toggle navButton navText" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Kiti
+			  </a>
+		    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: rgba(38, 38, 38, 0); color:white; font-size:1.5vw;">';
+						
+			for($i=$number; $i<count($array); $i++){
+				echo '<a class="dropdown-item text-white bg-dark navText" href="skyriai.php?skyrius='.$array[$i].'">'.$array[$i].'</a>';
+			}
+			echo '</div>
+			</div>';
+	}
+	if(!isset($_SESSION['prisijunges']) || !$_SESSION['prisijunges'])
+		echo "<div class='col'><a class='navText' href='prisijungti.php'>Prisijungti</a></div>";
+	else
+		echo "<div class='col'><a class='navText' href='admin.php'>Admin</a></div>";
 }
 
 function FillOptions($conn){

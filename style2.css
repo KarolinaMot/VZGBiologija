@@ -1,0 +1,255 @@
+body, html{
+    background-color: white;
+    margin:0;
+    padding: 0;
+}
+
+header {
+    background-image: url("Images/cover.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 500px rgba(0,0,0,.3);
+    padding:15vh;
+    left: 0;
+    right: 0; 
+}
+
+header h1 {
+    color: whitesmoke;
+    font-size: 6vw;
+    font-family: 'Rubik Mono One', sans-serif;
+    text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+    margin-top: 150px;
+    margin-bottom:90px;
+    text-align:center;
+    position:relative;
+}
+
+article{
+  position: relative;
+  width: calc(100%-270px);
+  left:270px;
+}
+
+#sidebar{
+  background-color: #202124;
+  width:240px; /*42px when not active*/
+  left:0;
+  top:0;
+  bottom:0;
+  position:fixed;
+  padding: 15px;
+}
+
+#sidebar button{
+  background-color: rgba(0, 0, 0, 0);
+  border: rgba(0, 0, 0, 0);  
+}
+
+#sidebar button img{
+  width:15%;
+  position: absolute;
+  right:7%;
+}
+
+.logo{
+  margin-top: 5%;
+  position:absolute;
+}
+
+.logo logoTitle{
+  font-family: 'Nunito', sans-serif;
+  top:0;
+  line-height: 50px;
+}
+.logo i{
+  font-size: 50px;
+  
+}
+
+.logo span{
+  font-family: 'Nunito', sans-serif;
+  font-size:3vw;
+  margin-left:10%;
+}
+
+.headerFade {
+    background-image: url("Images/dotFade.png");
+    background-size:contain;
+    height: 250px;
+    left: 0;
+    right: 0;
+    margin-top:-250px;
+    position: relative;
+}
+
+.mainBackground {
+    background-color: #262626;
+    left: 0;
+    right: 0; 
+    color: whitesmoke;
+    padding:50px;
+}
+
+.mainBackground h2{
+   font-size: 3vw;
+   font-family: 'Nunito', sans-serif;
+}
+.skyriusBoard{
+    width:inherit;
+    padding:30px;
+    margin-top:-2vh;
+    background-color: #41414f;
+    border-radius: 25px;
+    transform: all 0.3s ease;
+}
+
+.skyriusCard{
+    background-color: #262626;
+    padding:10px;
+    padding-bottom:20px;
+    border-radius:10px;
+    width: calc(25% - 30px);
+    display: inline-block;
+}
+
+@media only screen and (max-width: 800px){
+    .skyriusCard{width:100%; margin-left:-2%; margin-top:10px;}
+    .skyriusCover h3{ font-size: 4vw !important; margin-top:4vh !important; margin-bottom: 4vh !important;}
+    .klasesCover h3{ font-size: 4vw !important; margin-top:4vh !important; margin-bottom: 4vh !important;}
+    .skyriusBoard{margin-top:0vh;}
+    .wrap{padding:30px !important;}
+}
+
+@media only screen and (max-width: 900px){
+    .skyriusBoard{margin-top:0vh;}
+}
+
+
+.skyriusCover {
+    background-image: url("Images/Konspektas.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    background-size: cover;
+    padding-top: 3%;
+    border-radius: 10px;
+    max-width: inherit;
+    height:180px;
+    overflow: hidden;
+}
+
+.klasesCover {
+    background-image: url("Images/Klases2.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    background-size: cover;
+    padding-top: 3%;
+    border-radius: 10px;
+    max-width: inherit;
+    height:180px;
+    overflow: hidden;
+}
+
+.klasesCover h3{
+    font-family: 'Nunito', sans-serif;
+    text-shadow: 1px 0 0 #000000, -1px 0 0 #000000, 0 1px 0 #000000, 0 -1px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+    font-size: 1.5vw;
+    text-align: center;
+    margin-top:7vh;
+    margin-bottom: 7vh;
+}
+
+.klasesCover h3 a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.skyriusCover h3{
+    font-family: 'Nunito', sans-serif;
+    text-shadow: 1px 0 0 #000000, -1px 0 0 #000000, 0 1px 0 #000000, 0 -1px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+    font-size: 1.5vw;
+    text-align: center;
+    margin-top:7vh;
+    margin-bottom: 7vh;
+}
+
+.skyriusCover h3 a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.oneRow{
+    margin-top: 0.5vh;
+}
+
+.wrap{
+    margin-top:-6vh;
+    padding:70px;
+}
+
+/*#region -----------------------------------------ICON FONT-------------------------------------------*/
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?yen3iw');
+    src:  url('fonts/icomoon.eot?yen3iw#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?yen3iw') format('truetype'),
+      url('fonts/icomoon.woff?yen3iw') format('woff'),
+      url('fonts/icomoon.svg?yen3iw#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-user:before {
+    content: "\e900";
+  }
+  .icon-menu:before {
+    content: "\e901";
+  }
+  .icon-logo:before {
+    content: "\e902";
+  }
+  .icon-cell:before {
+    content: "\e909";
+  }
+  .icon-dna:before {
+    content: "\e903";
+  }
+  .icon-metabolism:before {
+    content: "\e904";
+  }
+  .icon-homeostasis:before {
+    content: "\e905";
+  }
+  .icon-health:before {
+    content: "\e906";
+  }
+  .icon-ecology:before {
+    content: "\e907";
+  }
+  .icon-evolution:before {
+    content: "\e908";
+  }
+/* #endregion*/
+  

@@ -3,10 +3,11 @@
     "",
     "\\Coding",
     "\\Coding\\POST",
+    "\\Images",
     "\\PdfViewer",
     "\\PdfViewer\\web",
     "\\PdfViewer\\web\\Uploads"
   ],
-  "SelectedNode": "\\header.php",
+  "SelectedNode": "\\PdfViewer\\web\\standard_fonts",
   "PreviewInSolutionExplorer": false
 }

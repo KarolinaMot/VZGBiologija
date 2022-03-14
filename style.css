@@ -1,163 +1,442 @@
-h2 {
-    margin-top: 10%;
-    text-align: center;
-}
+/*#region ------------------------------------------SIDEBAR--------------------------------------------*/
 
-.titleName{
-    color: whitesmoke;
-    font-size: 50px;
-}
-h3 {
-    color: whitesmoke;
-}
+    #sidebar{
+        position: fixed;
+        top:0;
+        left: 0;
+        height:100%;
+        width:78px;
+        background-color: #202124;
+        padding: 6px 14px; 
+        transition: all 0.7s ease;
+        overflow: hidden;
+        white-space: nowrap;
+    }
 
-label {
-    font-size: 18px;
-}
+    #sidebar2{
+        height:100%;
+        width:100%;
+        background: #202124;
+    }
 
-.header {
-    background-color: #262626;
-    font-size: 20px;
-    color: white;
-    height: 50px;
-}
-.head {
-    background-image: url("Images/dotFade.png");
-    background-size: contain;
-    margin-top: 15%;
+    #sidebar.active{
+        width:240px;
+    }
+
+    #sidebar.active #btn{
+        margin-left:-10px;
+    }
+/*#endregion*/
+
+/*#region -----------------------------------LOGO IN NAVIGATION BAR------------------------------------*/
+    #sidebar .logoContent .logo{
+        color: whitesmoke;
+        display: flex;
+        height: 50px;
+        width: 100%;
+        align-content: center;
+        opacity: 0;
+        transition: all 0.7s ease;
+    }
+
+    #sidebar.active .logoContent .logo{
+        opacity: 100;
+    }
+
+    .logoContent{
+        margin-top:10px;
+    }
+
+    .logoContent i{
+        font-size: 50px;
+        margin-right: 5px;
+    }
+
+    .logoContent .logo .logoName{
+        font-size: 20px;
+        font-weight: 200;
+        font-family: 'Nunito', sans-serif;
+        margin-left:12%;
+        margin-top:10px;
+    }
+
+    .logoContent #btn{
+        color: whitesmoke;
+        position: absolute;
+        left: 90%;
+        background: none;
+        border: none;
+        top: 6px;
+        height: 35px;
+        width: 35px;
+        text-align: center;
+        line-height: 35px;
+        transform: translateX(-50%);
+        margin-top:16px;
+        margin-left:-28px;
+        padding:0px;
+
+    }
+
+    .logoContent #btn img{
+        width:35px;
+    }
+
+    /*#endregion*/
+
+/*#region -----------------------------------LIST IN NAVIGATION BAR------------------------------------*/
+    .navList{
+        margin-top: 20px;
+    }
+
+    .navList li{
+       font-family: 'Nunito', sans-serif;
+       position: relative;
+       height: 50px;
+       width: 100%;
+       margin: 0 2px;
+       list-style: none;
+       font-size:38px;
+       margin-top:5px;
+       line-height: 50px;
+    }
+
+    .navList li span{
+        font-size:15px;
+        font-weight:200;
+        opacity:0;
+    }
+
+    #sidebar.active .navlist li span{
+        opacity:100;
+    }
+
+    .navList li a{
+        color: whitesmoke;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.7s ease;
+        border-radius:12px;
+    }
+
+    .navList li a:hover{
+        color: black;
+        background:whitesmoke;  
+
+    }
+
+    .navlist li a i{
+        height:50px;
+        min-width:50px;
+        border-radius:25px;
+        line-height:50px;
+        text-align: center;
+    }
+
+    .linkName{
+        margin-left: 20px;
+    }
+/*#endregion*/
+   
+/*#region --------------------------------------PROFILE CONTENT----------------------------------------*/
     
+    .profileContent{
+        background-color: #202124;
+        padding: 10px;
+        width:100%;
+        bottom: 0;
+        position: absolute;
+        transition: all 0.7s ease;
+        margin: -6px -14px;
+        height: 100px;
+        align-content: center;
+        transition: all 0.7s ease; 
+    }
+
+    #login{
+        width:100%;
+        border-radius:20px;
+        height: 50px;
+        color: whitesmoke;
+        background-color: rgba(0,0,0,0);
+        border: none;
+        font-family: 'Nunito', sans-serif;
+        padding-left:13px;
+        margin-top:12px;
+        position: relative;
+        line-height:30px;
+        transition: all 0.7s ease;    
+    }
+
+    #sidebar.active .profileContent{
+        background-color: #41414f;
+    }
+
+    #sidebar.active #login{
+        border: 1px solid whitesmoke;
+    }
+
+    .profileContent i{
+        font-size:30px;
+        line-height:0px;
+        margin-top:10px;
+        color: whitesmoke;
+        margin-left:-45px;
+        position:absolute;
+        transition: all 0.7s ease;
+        margin-top:37px;
+    }
+
+    #sidebar.active .profileContent i{
+        margin-left: -180px;
+    }
+
+    #login:hover {
+        background-color: whitesmoke;
+        color: black;
+    }
+
+    #login:hover + .icon-user{
+        color: black;
+        transition: all 0.7s ease;
+    }
+
+    #login span{
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        margin-left: 10px;
+        font-size:20px;
+        opacity:0;
+        margin-top:-10px;
+        transition: all 0.3s ease;
+        line-height: -20px;
+    }
+
+    #sidebar.active #login span{
+        opacity:100;
+    }
+/*#endregion*/
+   
+/*#region ------------------------------------------ARTICLE--------------------------------------------*/
+
+body, html{
+    background-color: white;
+    margin:0;
+    padding: 0;
 }
-.parallax {
+
+header {
     background-image: url("Images/cover.jpg");
-    min-height: 1000px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.3);
     background-size: cover;
-    padding-top: 150px;
+    box-shadow: inset 0 0 0 500px rgba(0,0,0,.3);
+    padding:15vh;
+    left: 0;
+    right: 0; 
 }
 
-.nameStyle {
+header h1 {
     color: whitesmoke;
-    font-size: 50px;
-    text-align: center;
+    font-size: 6vw;
     font-family: 'Rubik Mono One', sans-serif;
     text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
-    margin-bottom: 18%;
-    margin-left: 34%;
+    margin-top: 150px;
+    margin-bottom:90px;
+    text-align:center;
+    position:relative;
 }
-.blackBckgrnd {
+
+article{
+  height: 100%;
+  position: relative;
+  width: 85%;
+  right:0;
+}
+
+nav{
+    width: 15%;
+    background:
+}
+
+.headerFade {
+    background-image: url("Images/dotFade.png");
+    background-size:contain;
+    height: 250px;
+    left: 0;
+    right: 0;
+    margin-top:-250px;
+    position: relative;
+}
+
+.mainBackground {
     background-color: #262626;
+    left: 0;
+    right: 0; 
     color: whitesmoke;
-    width:100%;
+    padding:50px;
 }
 
-.darkGrayBckgrnd {
+.mainBackground h2{
+   font-size: 3vw;
+   font-family: 'Nunito', sans-serif;
+}
+.skyriusBoard{
+    width:inherit;
+    padding:30px;
+    margin-top:-2vh;
     background-color: #41414f;
-    padding: 20px;
-    color: whitesmoke;
-}
-
-.adminBackground {
-    background-image: url("Images/Klases2.jpg");
-    min-height: 200px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
-    background-size: cover;
-    border: 3px solid white;
-    padding: 5%;
-    color: whitesmoke;
-}
-
-.icon{
-    height: 18%;
-}
-
-.centerFont {
-    text-align: center
-}
-
-.center{
-    margin-left: 39%;
-}
-.abrilFont {
-    font-family: 'Abril Fatface', cursive;
-}
-
-.verticalMiddle{
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.klase {
-    background-image: url("Images/Klases2.jpg");
-    min-height: 200px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
-    background-size: cover;
-    padding-top: 7%;
-    text-align: center;
-}
-
-.skyriai {
-    background-image: url("Images/Konspektas.jpg");
-    min-height: 200px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
-    background-size: cover;
-    padding-top: 7%;
-    text-align: center;
-}
-
-.cardTop {
-    background-image: url("Images/cover.jpg");
-    min-height: 100px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
-    background-size: cover;
-    padding-top: 2%;
-    text-align: center;
-}
-
-.cardBackground {
-    background-color: #202124;
-    color: whitesmoke;
-}
-
-.cardPadding {
-    padding: 10px;
-}
-
-.roundedCorners {
     border-radius: 25px;
-    border-color: #6a696e;
+    transform: all 0.3s ease;
 }
 
-.vl {
-    background-color: whitesmoke;
-    width: 5%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
+.skyriusCard{
+    background-color: #262626;
+    padding:10px;
+    padding-bottom:20px;
+    border-radius:10px;
+    width: calc(25% - 30px);
+    display: inline-block;
 }
 
-.marginleft {
-    margin-left: 2%;
+@media only screen and (max-width: 800px){
+    .skyriusCard{width:100%; margin-left:-2%; margin-top:10px;}
+    .skyriusCover h3{ font-size: 4vw !important; margin-top:4vh !important; margin-bottom: 4vh !important;}
+    .klasesCover h3{ font-size: 4vw !important; margin-top:4vh !important; margin-bottom: 4vh !important;}
+    .skyriusBoard{margin-top:0vh;}
+    .wrap{padding:30px !important;}
 }
 
-.marginTop {
-    margin-top: 2%;
+@media only screen and (max-width: 900px){
+    .skyriusBoard{margin-top:0vh;}
 }
 
-.widewidth {
-    width: 100%;
+
+.skyriusCover {
+    background-image: url("Images/Konspektas.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    background-size: cover;
+    padding-top: 3%;
+    border-radius: 10px;
+    max-width: inherit;
+    height:180px;
+    overflow: hidden;
 }
+
+.klasesCover {
+    background-image: url("Images/Klases2.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    background-size: cover;
+    padding-top: 3%;
+    border-radius: 10px;
+    max-width: inherit;
+    height:180px;
+    overflow: hidden;
+}
+.klasesCover h3{
+    font-family: 'Nunito', sans-serif;
+    text-shadow: 1px 0 0 #000000, -1px 0 0 #000000, 0 1px 0 #000000, 0 -1px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+    font-size: 1.5vw;
+    text-align: center;
+    margin-top:7vh;
+    margin-bottom: 7vh;
+}
+
+.klasesCover h3 a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.skyriusCover h3{
+    font-family: 'Nunito', sans-serif;
+    text-shadow: 1px 0 0 #000000, -1px 0 0 #000000, 0 1px 0 #000000, 0 -1px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+    font-size: 1.5vw;
+    text-align: center;
+    margin-top:7vh;
+    margin-bottom: 7vh;
+}
+
+.skyriusCover h3 a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.oneRow{
+    margin-top: 0.5vh;
+}
+
+.wrap{
+    margin-top:-6vh;
+    padding:70px;
+}
+
+/*#endregion*/
+
+/*#region -----------------------------------------ICON FONT-------------------------------------------*/
+
+    @font-face {
+        font-family: 'icomoon';
+        src:  url('fonts/icomoon.eot?yen3iw');
+        src:  url('fonts/icomoon.eot?yen3iw#iefix') format('embedded-opentype'),
+          url('fonts/icomoon.ttf?yen3iw') format('truetype'),
+          url('fonts/icomoon.woff?yen3iw') format('woff'),
+          url('fonts/icomoon.svg?yen3iw#icomoon') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-display: block;
+      }
+      
+      [class^="icon-"], [class*=" icon-"] {
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: 'icomoon' !important;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+      
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      .icon-user:before {
+        content: "\e900";
+      }
+      .icon-menu:before {
+        content: "\e901";
+      }
+      .icon-logo:before {
+        content: "\e902";
+      }
+      .icon-cell:before {
+        content: "\e909";
+      }
+      .icon-dna:before {
+        content: "\e903";
+      }
+      .icon-metabolism:before {
+        content: "\e904";
+      }
+      .icon-homeostasis:before {
+        content: "\e905";
+      }
+      .icon-health:before {
+        content: "\e906";
+      }
+      .icon-ecology:before {
+        content: "\e907";
+      }
+      .icon-evolution:before {
+        content: "\e908";
+      }
+/* #endregion*/
+      

@@ -1,21 +1,18 @@
 ﻿<?php
 	include_once "Coding/SkyriusCode.php";
 	include_once "Coding/PostasCode.php";
+	$result2 = SearchByPavadinimas($conn, $_GET['skyrius']);
+		if($result2==null){
+			echo "<script type='text/javascript'>
+				alert('Šitas skyrius dar neturi jokių konspektų.');
+				location='pradzia.php';
+				</script>";
+		}
 ?>
-<html>
-	<body>
-		<div class="parallax" style="margin-top:-24px;">
-			<?php include_once "header.php";?>
+
 			<div class="container-fluid blackBckgrnd" height="100%" width="100%">
 				<div class="container">
 					<?php 
-						$result2 = SearchByPavadinimas($conn, $_GET['skyrius']);
-						if($result2==null){
-							echo "<script type='text/javascript'>
-								alert('Šitas skyrius dar neturi jokių konspektų.');
-								location='pradzia.php';
-								</script>";
-						}
 						$result = SearchByClass($conn, "Pirmokams");
 						$tinkamas = false;
 						$skyriausID = SelectID($conn, $_GET['skyrius']);
@@ -88,12 +85,10 @@
 						<h3>Ketvirtokų konspektai</h3>
 						<div class="row darkGrayBckgrnd roundedCorners">
 							<?php 
-								FillKonspektusBySkyrius($conn, $_GET['skyrius'],  "Ketvirtokams", );
+								//FillKonspektusBySkyrius($conn, $_GET['skyrius'],  "Ketvirtokams", );
 							?>
 						</div>
 					<?php }}?>
 				</div>
 			</div>
 		</div>
-	</body>
-</html>
