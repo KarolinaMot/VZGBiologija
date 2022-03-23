@@ -11,14 +11,15 @@ if(isset($_POST['prisijungti'])){
 		$_SESSION['slapyvardis'] =$vardas;
 		echo "<script type='text/javascript'>
 				alert('Sekmingai prisijungėte :)');
-				location='../../pradzia.php';
+				location='../../index.php';
 				</script>";
 	}
 	else if($result2==false) {
-		$_SESSION['prisijunges'] =false;
+		$_SESSION['prisijunges'] = false;
+		$_GET['puslapis'] = 'prisijungti';
 		echo "<script type='text/javascript'>
 				alert('Neteisingai ivesti duomenys :(');
-				location='../../pradzia.php';
+				location='../../index.php';
 				</script>";
     }
 }

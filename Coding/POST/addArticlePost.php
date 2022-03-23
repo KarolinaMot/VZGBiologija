@@ -7,6 +7,7 @@ if (isset($_POST['postas']))
     $skyrius = $_POST['skyrius'];
     $klase = $_POST['klase'];
     $skyriusID = SelectSkyriusID($conn, $skyrius);
+    $klaseID = SelectKlaseID($conn, $klase);
     $ikelta = false;
     $newFileName =" ";
 
@@ -63,11 +64,11 @@ if (isset($_POST['postas']))
       {
           echo "<script type='text/javascript'>
 				alert('Postas nesukurtas :(');
-				location='../../admin.php';
+				location='../../index.php';
 				</script>";
       }
       else{
-         InsertToPostas($conn, $pavadinimas, $klase, $newFileName, $skyriusID, $skyrius);
+         InsertToPostas($conn, $pavadinimas, $klaseID, $klase, $newFileName, $skyriusID, $skyrius);
       }
 
       unset($_POST['postas']);
@@ -77,7 +78,7 @@ if (isset($_POST['postas']))
 
       $_GET['link'] = "Admin";
       	echo "<script type='text/javascript'>
-				location='../../pradzia.php';
+				location='../../index.php';
 				</script>";
 }
 

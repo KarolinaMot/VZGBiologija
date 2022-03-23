@@ -1,147 +1,189 @@
+header h1 {
+    color: whitesmoke;
+    font-family: 'Rubik Mono One', sans-serif;
+    text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+    margin-top: 50px;
+    margin-bottom:50px;
+    text-align:center;
+    font-size:50px;
+}
+
+.wrap h3{
+  text-align: center;
+  color: whitesmoke;
+  font-family: 'Nunito', sans-serif;
+}
+
+.mainBackground h2{
+  font-size: 3vw;
+  font-family: 'Nunito', sans-serif;
+}
+
+.headerFade {
+  background-image: url("Images/dotFade.png");
+  background-size:contain;
+  height: 150px;
+  margin-top:-150px;
+  left: 0;
+  right: 0;
+}
+
+/*#region ----------------------------------------STRUCTURE----------------------------------------------*/
 body, html{
-    background-color: white;
-    margin:0;
-    padding: 0;
+  background-color: white;
+  margin:0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 header {
-    background-image: url("Images/cover.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: inset 0 0 0 500px rgba(0,0,0,.3);
-    padding:15vh;
-    left: 0;
-    right: 0; 
-}
-
-header h1 {
-    color: whitesmoke;
-    font-size: 6vw;
-    font-family: 'Rubik Mono One', sans-serif;
-    text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
-    margin-top: 150px;
-    margin-bottom:90px;
-    text-align:center;
-    position:relative;
+  background-image: url("Images/cover.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 0 0 500px rgba(0,0,0,.3);
+  padding:15vh;
+  left: 0;
+  right: 0; 
 }
 
 article{
   position: relative;
-  width: calc(100%-270px);
-  left:270px;
+  width: calc(100%-78px);
+  left:70px;
+  transition: all 0.7s ease;
 }
 
-#sidebar{
-  background-color: #202124;
-  width:240px; /*42px when not active*/
-  left:0;
-  top:0;
-  bottom:0;
-  position:fixed;
-  padding: 15px;
-}
-
-#sidebar button{
-  background-color: rgba(0, 0, 0, 0);
-  border: rgba(0, 0, 0, 0);  
-}
-
-#sidebar button img{
-  width:15%;
-  position: absolute;
-  right:7%;
-}
-
-.logo{
-  margin-top: 5%;
-  position:absolute;
-}
-
-.logo logoTitle{
-  font-family: 'Nunito', sans-serif;
-  top:0;
-  line-height: 50px;
-}
-.logo i{
-  font-size: 50px;
-  
-}
-
-.logo span{
-  font-family: 'Nunito', sans-serif;
-  font-size:3vw;
-  margin-left:10%;
-}
-
-.headerFade {
-    background-image: url("Images/dotFade.png");
-    background-size:contain;
-    height: 250px;
-    left: 0;
-    right: 0;
-    margin-top:-250px;
-    position: relative;
+#sidebar.active ~ article{
+  width: calc(100%-250px);
+  left:250px;
 }
 
 .mainBackground {
-    background-color: #262626;
-    left: 0;
-    right: 0; 
-    color: whitesmoke;
-    padding:50px;
+  background-color: #262626;
+  left: 0;
+  right: 0; 
+  color: whitesmoke;
+  padding:50px;
 }
 
-.mainBackground h2{
-   font-size: 3vw;
-   font-family: 'Nunito', sans-serif;
-}
 .skyriusBoard{
-    width:inherit;
-    padding:30px;
-    margin-top:-2vh;
-    background-color: #41414f;
-    border-radius: 25px;
-    transform: all 0.3s ease;
+  width:inherit;
+  padding:30px;
+  margin-top:-2vh;
+  background-color: #41414f;
+  border-radius: 25px;
+  transform: all 0.3s ease;
 }
 
-.skyriusCard{
-    background-color: #262626;
-    padding:10px;
-    padding-bottom:20px;
-    border-radius:10px;
-    width: calc(25% - 30px);
-    display: inline-block;
+.oneRow{
+  margin-top: 0.5vh;
 }
 
+.wrap{
+  padding:100px;
+  margin-top:-100px;
+}
+
+
+/*#endregion*/
+
+/*#region ----------------------------------------MEDIA--------------------------------------------------*/
 @media only screen and (max-width: 800px){
-    .skyriusCard{width:100%; margin-left:-2%; margin-top:10px;}
-    .skyriusCover h3{ font-size: 4vw !important; margin-top:4vh !important; margin-bottom: 4vh !important;}
-    .klasesCover h3{ font-size: 4vw !important; margin-top:4vh !important; margin-bottom: 4vh !important;}
-    .skyriusBoard{margin-top:0vh;}
-    .wrap{padding:30px !important;}
+  h1{font-size: 40px !important; margin-left:-90px;}
+  .skyriusCard{width:100% !important; margin-left:-2%; margin-top:10px;}
+  .skyriusCover h3{ font-size: 4vw !important; margin-top:4vh !important; margin-bottom: 4vh !important;}
+  .klasesCover h3{ font-size: 4vw !important; margin-top:4vh !important; margin-bottom: 4vh !important;}
+  .skyriusBoard{margin-top:0vh;}
+  .wrap{padding:30px !important;}
+  .header h1{font-size: 20px !important;}
+  .skyriusCover h3{padding-top: 25px !important; }
+  .klasesCover h3{padding-top: 35px !important}
+  .wrap{margin-left: -40px; width:90%;}
+  .classWrap{margin-top:10px;}
+  #logout{margin-top:110px;}
+  .konspektasCard{width:inherit !important;}
+  .konspektaiAdmin2 table, button{
+    font-size: 12px;
+  }
+
 }
 
-@media only screen and (max-width: 900px){
-    .skyriusBoard{margin-top:0vh;}
+@media only screen and (max-width: 600px){
+  h1{font-size: 35px !important; margin-left: -50px !important;}
+  .wrap{margin-left: -60px; margin-top:5px; width:90%;}
+  .skyriusWrap{margin-top:-70px !important;}
+  .loginWrap{margin-top:-70px !important; margin-left:-50px !important;}
+  .loginWrap .loginBoard{margin-left:30px;}
+  .wrap h2{font-size: 20px;}
+  .skyriusCover h3{padding-top: 25px !important; }
+  .klasesCover h3{padding-top: 35px !important}
+  .adminBoard{display:block !important; padding: 50px!important; width: 80%; padding-bottom: 15px; margin-top:-30px; overflow: hidden; padding-top:0px !important; margin-left:-10px;}
+  .adminBoard2{margin-top:50px !important; margin-left: -23px; width:100%;}
+  .adminBoard2:first-child{margin-top:-50px;}
+  #logout{margin-top:10px !important;}
+  .adminWrap h3{margin-top:-60px; margin-left: 40px;}
+  .konspektasCard{width:inherit !important;}
+}
+
+@media only screen and (max-width: 1000px){
+  .konspektaiAdmin{display:block !important; padding: 50px!important; width: 80%; padding-bottom: 15px; margin-top:-30px; overflow: hidden; padding-top:0px !important; margin-left:-10px;}
+  .konspektaiAdmin2{margin-top:50px !important; margin-left: -23px; width:100%;}
+
+}
+/*#endregion*/
+
+/*#region ----------------------------------------KONSPEKTAS CARD--------------------------------------------*/
+.konspektasCover {
+  background-image: url("Images/Klases2.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+  background-size: cover;
+  padding: 2%;
+  border-radius: 10px;
+  max-width: inherit;
+  overflow: hidden;
+}
+
+.konspektasCard{
+  background-color: #262626;
+  padding:15px;
+  padding-bottom:20px;
+  border-radius:10px;
+  width: 15%;
+  display: inline-block;
+}
+
+.konspektasCard p{
+  color: whitesmoke;
+  font-family: 'Nunito', sans-serif;
+}
+
+.konspektasCard button{
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  color:white;
+  padding:5px;
+  font-size: 15px;
+  font-family: 'Nunito', sans-serif;
+  border: 2px solid whitesmoke;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.konspektasCard button:hover{
+  background-color: whitesmoke;
+  color: black;
 }
 
 
-.skyriusCover {
-    background-image: url("Images/Konspektas.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
-    background-size: cover;
-    padding-top: 3%;
-    border-radius: 10px;
-    max-width: inherit;
-    height:180px;
-    overflow: hidden;
-}
 
+/*#endregion*/
+
+/*#region ----------------------------------------KLASES CARD--------------------------------------------*/
 .klasesCover {
     background-image: url("Images/Klases2.jpg");
     background-attachment: fixed;
@@ -156,6 +198,7 @@ article{
     overflow: hidden;
 }
 
+
 .klasesCover h3{
     font-family: 'Nunito', sans-serif;
     text-shadow: 1px 0 0 #000000, -1px 0 0 #000000, 0 1px 0 #000000, 0 -1px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
@@ -168,6 +211,290 @@ article{
 .klasesCover h3 a{
     text-decoration: none;
     color: whitesmoke;
+}
+
+/*#endregion*/
+
+/*#region ----------------------------------------LOGIN--------------------------------------------------*/
+
+
+#login2:hover{
+  background-color: whitesmoke;
+  color: black;
+  transition: all 0.3s ease;
+}
+.wrap h3{
+  font-family: 'Nunito', sans-serif;
+  color: white;
+  font-size: 25px;
+}
+
+.loginBoard{
+  width:200px;
+  padding:30px;
+  margin-left:auto;
+  margin-right: auto;
+  background-color: #41414f;
+  border-radius: 25px;
+  transform: all 0.3s ease;
+}
+
+.loginForm{
+  margin-left:auto;
+  margin-right: auto;
+  margin-top:-15px;
+}
+
+
+.loginForm p{
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  width: 100%;
+}
+
+.loginForm input{
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid white;
+  padding:5px;
+}
+
+.loginForm button{
+  margin-top:25px;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  padding:8px;
+  border-radius: 15px;
+  border:2px solid white;
+  background-color: rgba(0,0,0,0);
+  color: white;
+}
+
+.loginForm a{
+  color: whitesmoke;
+  font-family: 'Nunito', sans-serif;
+}
+
+.loginForm a:hover{
+  color: gray;
+
+}
+/*#endregion*/
+
+/*#region ----------------------------------------ADMIN--------------------------------------------------*/
+  #logout{
+    width: inherit;
+    padding:15px;
+    background-color: rgba(98, 18, 38, 0);
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    border: solid 1px whitesmoke;
+    border-radius: 15px;
+    margin-top: 130px;
+    transition:all 0.3s ease;
+  }
+
+  .adminBoard{
+    background-image: url("Images/cover.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 500px rgba(0,0,0,.6);
+    left: 0;
+    right: 0; 
+    border: solid 3px white;
+    border-radius: 25px;
+    padding: 35px;
+    display: flex;
+    padding-top: 60px;
+  }
+
+  .adminBoard2:first-child{
+    margin-right: 20px;
+    flex: 1;
+  }
+
+  .adminiBoard2 h4{
+    font-size: 10px !important;
+    text-align: left !important;
+    margin-left: -25px;
+  }
+
+  .adminBoard2{
+    padding:25px;
+    margin-top:-2vh;
+    background-color: #41414f;
+    border-radius: 25px;
+    transform: all 0.3s ease;
+    flex: 2;
+    white-space: nowrap;
+  }
+
+  #logout:hover{
+    background-color: rgb(98, 18, 38);
+  }
+
+  #keisti{
+    width: inherit;
+    padding:15px;
+    background-color:rgba(26, 103, 44, 0);
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    border: solid 1px whitesmoke;
+    border-radius: 15px;
+    margin-top: 15px;
+    transition:all 0.3s ease;
+    margin-top: 40px;
+  }
+
+  #keisti:hover{
+    background-color:whitesmoke;
+    color: black;
+  }
+
+  .accountForm input{
+    font-size:15px;
+    padding:5px;
+    border-radius:15px;
+    margin-top:-10px;
+    margin-left: -5px;
+    width:100%;
+    font-family: 'Nunito', sans-serif;
+    background-color: #32353c;
+    color: white;
+    border: solid 1px whitesmoke;
+  }
+
+  .kurtiForm input{
+    font-size:15px;
+    padding:5px;
+    border-radius:15px;
+    margin-top:-10px;
+    margin-left: -5px;
+    width:100%;
+    font-family: 'Nunito', sans-serif;
+    background-color: #32353c;
+    color: white;
+    border: solid 1px whitesmoke;
+  }
+
+  .kurtiForm input::file-selector-button{
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 15px;
+    color:white;
+    font-family: 'Nunito', sans-serif;
+    border: solid 1px whitesmoke;
+    height: inherit;
+
+  }
+
+  .adminBoard p{
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+  }
+
+  .selects{
+    display: flex;
+  }
+
+  .select {
+    flex: 1;
+    margin-left:10px;
+  }
+
+  .select select{
+    text-transform: capitalize;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    border-radius: 15px;
+    background-color: #32353c;
+    color: white;
+    border: solid 1px whitesmoke;
+  }
+
+  .select select option{
+    border-radius: 20px;
+    background-color: #32353c;
+    color: white;
+    border: solid 1px whitesmoke;
+  }
+
+  .selects p{
+    font-size: 15px;
+  }
+
+  .postaiTable{
+    width: 100%;
+    color:white;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  table{
+    border-radius: 25px !important;
+  }
+
+  table, th, td{
+    border: solid 2px whitesmoke;
+    border-collapse: collapse;
+    padding: 3px;
+    text-align: center;
+  }
+
+  th{
+    background-color: whitesmoke;
+    color: black;
+  }
+  
+  td{
+    padding-top:15px !important;
+    padding-bottom: 15px !important;
+  }
+
+  table button{
+    margin-top: -1px !important;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 15px;
+    color:white;
+    font-family: 'Nunito', sans-serif;
+    border: 1px solid whitesmoke;
+    transition: all 0.3s ease;
+  }
+
+  table button:hover{
+    background-color: whitesmoke;
+    color: black;
+  }
+/*#endregion*/
+
+/*#region ----------------------------------------SKYRIUS CARD-------------------------------------------*/
+
+.skyriusCard{
+  background-color: #262626;
+  padding:10px;
+  padding-bottom:20px;
+  border-radius:10px;
+  width: calc(25% - 30px);
+  display: inline-block;
+}
+
+.skyriusCover {
+  background-image: url("Images/Konspektas.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+  background-size: cover;
+  padding-top: 3%;
+  border-radius: 10px;
+  max-width: inherit;
+  height:180px;
+  overflow: hidden;
 }
 
 .skyriusCover h3{
@@ -184,72 +511,422 @@ article{
     color: whitesmoke;
 }
 
-.oneRow{
-    margin-top: 0.5vh;
+
+/*#endregion*/
+
+/*#region ----------------------------------------SIDEBAR------------------------------------------------*/
+#sidebar{
+  background-color: #202124;
+  width:42px; /*240px when active*/
+  left:0;
+  top:0;
+  bottom:0;
+  position:fixed;
+  padding: 15px;
+  overflow: hidden; /*not hidden when active*/
+  transition: all 0.7s ease;
 }
 
-.wrap{
-    margin-top:-6vh;
-    padding:70px;
+#sidebar.active{
+  width:220px;
+  overflow:visible;
+}/*#endregion*/
+
+/*#region ----------------------------------------SIDEBAR LOGO-------------------------------------------*/
+#sidebar #btn img{
+  /*width:45%; /*15% when active*/
+  width: 35px;
+  position: fixed;
+  /*right:25%; /*7% when active*/
+  margin-top:5px;
+  transition: all 0.7s ease;
 }
 
-/*#region -----------------------------------------ICON FONT-------------------------------------------*/
+#sidebar #btn{
+  background-color: rgba(0, 0, 0, 0);
+  border: rgba(0, 0, 0, 0);  
+  transition: all 1s ease;
+}
+
+.logo{
+  margin-top: 5%;
+  position:absolute;
+}
+
+.logo .logoTitle{
+  font-family: 'Nunito', sans-serif;
+  font-size:20px;
+  color: whitesmoke;
+  margin-left: 150%;
+  opacity: 0; /*100 when active*/
+  top:0;
+  transition: all 0.7s ease;
+}
+
+.logo i{
+  font-size: 50px;
+  color: whitesmoke;
+  margin-top:-10px;
+  position: absolute;
+  opacity: 0; /*100 when active*/
+  transition: all 0.7s ease;
+}
+
+
+#sidebar.active #btn img{
+  margin-left:180px;
+}
+
+#sidebar.active .logo .logoTitle{
+  opacity: 100;
+}
+
+#sidebar.active .logo i{
+  opacity: 100;
+}
+
+/*#endregion*/
+
+/*#region ----------------------------------------SIDEBAR LIST-------------------------------------------*/
+.navlist{
+  position: absolute;
+  margin-top: 70px;
+  margin-left: -43px;
+  list-style-type: none;
+}
+
+.navlist li  span{
+  margin-left: 15px;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.navlist li{
+  font-size: 15px;
+  line-height:40px;
+  margin-top: 5px;
+}
+
+.navlist li i{
+  font-size: 40px;
+}
+
+.navlist li a{
+  text-decoration: none;
+  color: whitesmoke;
+  height:40px;
+  display: block;
+  padding:5px;
+  transition: all 0.3s ease;
+  border-radius:15px;
+}
+
+.navlist li a:hover{
+  background-color: white;
+  color:black;
+}
+
+#sidebar.active .navlist{
+  overflow: visible;
+}
+
+#sidebar.active .navlist li span{
+  opacity: 100;
+}
+
+#sidebar.active .navlist li a{
+  padding-right: 180px;
+}
+/*#endregion*/
+
+/*#region ----------------------------------------SIDEBAR ACCOUNT----------------------------------------*/
+.account{
+  background-color: rgba(0, 0, 0, 0);
+  height: 100px;
+  position: absolute;
+  bottom:0;
+  width: 250px;
+  margin-left:-15px;
+  transition: all 0.7 ease;
+}
+
+.account #login{
+  width: 80%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  border: solid 2px #202124;
+  border-radius: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 25px;
+  margin-right: 25px;
+  color: whitesmoke;
+  font-size:15px;
+}
+
+.account #admin{
+  width: 80%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 25px;
+  margin-right: 25px;
+  color: whitesmoke;
+  border: 2px solid rgba(0, 0, 0, 0);
+  font-size:15px;
+  transition: all 0.5s ease;
+}
+
+#admin i{
+  font-size: 35px;
+  transition: all 0.5s ease;
+  margin-left: -65px;
+}
+
+#admin span{
+  opacity: 0;
+  transition: all 0.5s ease;
+  margin-right: 5px !important;
+}
+
+#sidebar.active #admin{
+  border: 2px solid whitesmoke;
+}
+
+#sidebar.active #admin i{
+  font-size: 20px;
+  margin-left: 0px;
+} 
+
+#sidebar.active #admin span{
+  opacity: 100;
+}
+
+#sidebar.active #admin:hover{
+  background-color: whitesmoke;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+#login i{
+  margin-left: -175px;
+  font-size: 35px;
+  transition: all 0.7s ease;
+}
+
+#login span{
+  margin-left:15px;
+  margin-top: 5px;
+  position: absolute;
+  opacity: 0;
+}
+
+#sidebar.active #login:hover{
+  background-color: whitesmoke;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+#sidebar.active .account{
+  background-color: #41414f;
+}
+
+#sidebar.active .account #login{
+   border: solid 2px whitesmoke;
+   transition: all 0.7s ease;
+}
+
+#sidebar.active #login i{
+  font-size: 25px;
+  margin-left:-80px;
+}
+
+#sidebar.active #login span{
+  opacity:100;
+}
+/*#endregion*/
+
+/*#region ----------------------------------------SEARCH----------------------------------------------*/
+
+#filterBoard{
+  background-color: #202124;
+  border-radius: 25px;
+  height: 45px;
+  overflow: hidden;
+  transition: all 0.7s ease;
+}
+
+#filterBoard.active{
+  height:100px !important;
+}
+
+#filter{
+  background-color: #202124;
+  color:white;
+  font-size: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+#filter i{
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+#filter span{
+  margin-left: 15px;
+  position:absolute;
+  line-height: 25px;
+}
+
+#filter:hover{
+  background-color: #2f3136;
+}
+
+#filterboard.active #filter:hover{
+  background-color:  #202124;
+  color: white;
+}
+
+#filterBoard.active .searchForm{
+  opacity: 100;
+}
+
+.filterForm{
+  display: flex;
+  flex-direction: row;
+  padding: 15px; 
+  padding-top: 25px;
+  border-radius: 25px;  
+  margin-top: -8px;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+
+.filterForm p{
+  font-size: 15px;
+}
+
+.filterForm .select select{
+  margin-top:-15px;
+  width: 90%;
+  font-size: 13px;
+}
+
+.filterForm .select{
+  margin-top:-30px;
+  font-size: 12px; 
+}
+
+.searchBar{
+  display: flex;
+  flex-direction: row;
+  border: 1px solid white;
+  border-radius:15px;
+  background-color: whitesmoke;
+}
+
+.searchBar input{
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  border-radius: 15px;
+  border: 1px solid white;
+  padding:2px;
+  flex-grow:2;
+  border: none;
+}
+
+.searchBar input:focus{
+outline: none;
+}
+
+.searchBar button{
+  border-radius: 15px;
+  font-size: 15px;
+  border: none;
+  background-color: #202124;
+  color: white;
+  height:inherit !important;
+  border: 5px solid #202124;
+  margin-left: -15%;
+}
+
+/*#endregion*/
+
+/*#region ----------------------------------------ICON FONT----------------------------------------------*/
 
 @font-face {
-    font-family: 'icomoon';
-    src:  url('fonts/icomoon.eot?yen3iw');
-    src:  url('fonts/icomoon.eot?yen3iw#iefix') format('embedded-opentype'),
-      url('fonts/icomoon.ttf?yen3iw') format('truetype'),
-      url('fonts/icomoon.woff?yen3iw') format('woff'),
-      url('fonts/icomoon.svg?yen3iw#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-  }
-  
-  [class^="icon-"], [class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-  
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .icon-user:before {
-    content: "\e900";
-  }
-  .icon-menu:before {
-    content: "\e901";
-  }
-  .icon-logo:before {
-    content: "\e902";
-  }
-  .icon-cell:before {
-    content: "\e909";
-  }
-  .icon-dna:before {
-    content: "\e903";
-  }
-  .icon-metabolism:before {
-    content: "\e904";
-  }
-  .icon-homeostasis:before {
-    content: "\e905";
-  }
-  .icon-health:before {
-    content: "\e906";
-  }
-  .icon-ecology:before {
-    content: "\e907";
-  }
-  .icon-evolution:before {
-    content: "\e908";
-  }
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?ytje9m');
+  src:  url('fonts/icomoon.eot?ytje9m#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ytje9m') format('truetype'),
+    url('fonts/icomoon.woff?ytje9m') format('woff'),
+    url('fonts/icomoon.svg?ytje9m#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-filter:before {
+  content: "\e90b";
+}
+
+.icon-search:before {
+  content: "\e90a";
+}
+.icon-user:before {
+  content: "\e900";
+}
+.icon-menu:before {
+  content: "\e901";
+}
+.icon-logo:before {
+  content: "\e902";
+}
+.icon-cell:before {
+  content: "\e909";
+}
+.icon-dna:before {
+  content: "\e903";
+}
+.icon-metabolism:before {
+  content: "\e904";
+}
+.icon-homeostasis:before {
+  content: "\e905";
+}
+.icon-health:before {
+  content: "\e906";
+}
+.icon-ecology:before {
+  content: "\e907";
+}
+.icon-evolution:before {
+  content: "\e908";
+}
+
 /* #endregion*/
   
+

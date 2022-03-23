@@ -31,16 +31,31 @@ function SkyriuArray($conn){
 	return $skyriai;
 }
 
+function KlasiuArray($conn){
+	$klases = Array();
+	$sql = "Select * FROM klase";
+	$result = $conn->query($sql);
+
+	 if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+        if($row['Pavadinimas']!=""){
+			array_push($klases, $row['Pavadinimas']);
+		}
+      }
+    }
+
+	return $klases;
+}
+
 function InsertToSkyrius($pavadinimas, $conn){
 	$sql = 'INSERT INTO skyrius (Pavadinimas)
 	VALUES ("'.$pavadinimas.'")';
 
 	if (mysqli_query($conn, $sql)) {
 	} else {
-		echo '<script>alert("Ups, kažkas negerai su serveriu")</script>';
+		echo '<script>alert("Ups, kaï¿½kas negerai su serveriu")</script>';
 	}
 }
-
 
 function SelectID($conn, $pavadinimas){
 	$sql = "SELECT ID FROM skyrius WHERE Pavadinimas='".$pavadinimas."'";
@@ -141,8 +156,12 @@ function FillNavBar($conn, $number){
 		echo "<div class='col'><a class='navText' href='admin.php'>Admin</a></div>";
 }
 
-function FillOptions($conn){
-	$array = SkyriuArray($conn);
+function FillOptions($conn, $type){
+	if($type=="skyriai")
+		$array = SkyriuArray($conn);
+	else if($type=="klases")
+		$array = KlasiuArray($conn);
+
 
 	for($i=0; $i<count($array); $i++){
 		echo "<option value='".$array[$i]."'>".$array[$i]."</option>";

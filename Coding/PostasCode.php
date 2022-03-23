@@ -13,6 +13,18 @@ function SelectSkyriusID($conn, $pavadinimas){
 	return $result2;
 }
 
+function SelectKlaseID($conn, $pavadinimas){
+	$sql = "SELECT ID FROM klase WHERE Pavadinimas='".$pavadinimas."'";
+	$result = $conn->query($sql);
+    $result2 =" ";
+    if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+        $result2 = $row["ID"];
+      }
+    }
+	return $result2;
+}
+
 function SelectPostasID($conn, $pavadinimas){
 	$sql = "SELECT ID FROM postas WHERE Pavadinimas='".$pavadinimas."'";
 	$result = $conn->query($sql);
@@ -25,10 +37,10 @@ function SelectPostasID($conn, $pavadinimas){
 	return $result2;
 }
 
-function InsertToPostas($conn, $pavadinimas, $klase, $failas, $skyriusID, $skyrius){
+function InsertToPostas($conn, $pavadinimas, $klaseID, $klase, $failas, $skyriusID, $skyrius){
 
-	$sql = "INSERT INTO postas (Pavadinimas, Failas, Klase, SkyriusID, Skyrius)
-	VALUES ('".$pavadinimas."','".$failas."','".$klase."','".$skyriusID."','".$skyrius."')";
+	$sql = "INSERT INTO postas (Pavadinimas, Failas, KlaseID, SkyriusID, Skyrius, Klase)
+	VALUES ('".$pavadinimas."','".$failas."','".$klaseID."','".$skyriusID."','".$skyrius."','".$klase."')";
 
     if (mysqli_query($conn, $sql)) {
 		 echo '<script>alert("New record created successfully")</script>';
@@ -47,6 +59,13 @@ function SearchByClass($conn, $klase){
 function SearchBySkyrius($conn, $skyrius){
 
     $sql = "SELECT * FROM postas WHERE Skyrius='".$skyrius."'";
+    $result = $conn->query($sql);
+    
+    return $result;
+}
+
+function SearchByKlase($conn, $klase){
+	$sql = "SELECT * FROM postas WHERE klase='".$klase."'";
     $result = $conn->query($sql);
     
     return $result;
@@ -96,6 +115,23 @@ function FillKonspektusBySkyrius($conn, $skyrius, $klase){
 		}			
 	}
 }
+
+function FillKonspektusByKlase($conn, $klase, $skyrius){
+
+    $result = SearchByKlase($conn, $klase);
+
+	while($row = $result->fetch_assoc()){
+		if($row["Skyrius"] == $skyrius){
+			echo '<div class="konspektasCard">
+				  	<div class="konspektasCover"><h3><h3>'.$row["Pavadinimas"].'</h3></h3></div>
+					<p><b>Skyrius: </b>'.ucfirst($row["Skyrius"]).'</p>
+					<p><b>Klasė: </b>'.ucfirst($row["Klase"]).'</p>
+					<a href="index.php"><button>Plačiau</button></a>
+				  </div>';
+		}			
+	}
+}
+
 function DeletePost($conn, $pavadinimas){
 
 	$ID = SelectPostasID($conn, $pavadinimas);
@@ -111,6 +147,23 @@ function DeletePost($conn, $pavadinimas){
 	} else {
 	  echo "<script>alert('Postas nebuvo istrintas: '".$conn->error.");
 				location='../../pradzia.php';</script>";
+	}
+}
+
+function FillTable($conn){
+	$sql = "SELECT * FROM postas";
+	$result = $conn->query($sql);
+
+	if ($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()) {
+			echo "<tr>
+				<td>".$row["Pavadinimas"]."</td>
+				<td>".ucfirst($row["Skyrius"])."</td>
+				<td>".ucfirst($row["Klase"])."</td>
+				<td><button id='redaguoti' type='submit' name='redaguoti' style='width: 100%; margin-top: 20px;'>Redaguoti</button></td>
+				<td><button id='trinti' type='submit' name='trinti' style='width: 100%; margin-top: 20px;'>Trinti</button></td>
+			</tr>";
+		}
 	}
 }
 
