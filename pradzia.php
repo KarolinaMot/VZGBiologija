@@ -1,5 +1,24 @@
-<link rel="stylesheet" href="style2.css">
-<div class="wrap skyriusWrap">
+
+<div class="wrap" >
+    <h2>Klasės</h2>
+    <div class="skyriusBoard">
+        <div class="oneRow">
+            <div class="skyriusCard">
+                <div class="klasesCover"><h3><a href="index.php?klase=pirmokams&puslapis=klases">PIRMOKAMS</a></h3></div>
+            </div>    
+            <div class="skyriusCard">
+                <div class="klasesCover"><h3><a href="index.php?klase=antrokams&puslapis=klases">ANTROKAMS</a></h3></div>
+            </div>    
+            <div class="skyriusCard">
+                <div class="klasesCover"><h3><a href="index.php?klase=treciokams&puslapis=klases">TREČIOKAMS</a></h3></div>
+            </div> 
+            <div class="skyriusCard">
+                <div class="klasesCover"><h3><a href="index.php?klase=ketvirtokams&puslapis=klases">KETVIRTOKAMS</a></h3></div>
+            </div> 
+        </div>
+    </div>
+</div>
+<div class="wrap">
                     <h2>Skyriai</h2>
                     <div class="skyriusBoard">
                         <div class="oneRow">
@@ -28,23 +47,4 @@
                             </div> 
                         </div>
                     </div>
-                </div>
-                <div class="wrap classWrap" >
-                    <h2>Klasės</h2>
-                    <div class="skyriusBoard">
-                        <div class="oneRow">
-                            <div class="skyriusCard">
-                                <div class="klasesCover"><h3><a href="index.php?klase=pirmokams&puslapis=klases">PIRMOKAMS</a></h3></div>
-                            </div>    
-                            <div class="skyriusCard">
-                                <div class="klasesCover"><h3><a href="index.php?klase=antrokams&puslapis=klases">ANTROKAMS</a></h3></div>
-                            </div>    
-                            <div class="skyriusCard">
-                                <div class="klasesCover"><h3><a href="index.php?klase=treciokams&puslapis=klases">TREČIOKAMS</a></h3></div>
-                            </div> 
-                            <div class="skyriusCard">
-                                <div class="klasesCover"><h3><a href="index.php?klase=ketvirtokams&puslapis=klases">KETVIRTOKAMS</a></h3></div>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
+</div>

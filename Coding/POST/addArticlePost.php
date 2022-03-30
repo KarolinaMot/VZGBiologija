@@ -49,7 +49,7 @@ if (isset($_POST['postas']))
       }
       else
       {
-        $message = 'There is some error in the file upload. Please check the following error.<br>';
+        $message = 'Kažkas ne taip su įkeltu failu.<br>';
         echo "<script>alert('ERROR');</script>";
       }
 
@@ -76,9 +76,8 @@ if (isset($_POST['postas']))
       unset($_POST['skyrius']);
       unset($_POST['klase']);
 
-      $_GET['link'] = "Admin";
       	echo "<script type='text/javascript'>
-				location='../../index.php';
+        location='../../index.php?puslapis=admin';
 				</script>";
 }
 

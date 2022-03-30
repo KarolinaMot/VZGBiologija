@@ -17,8 +17,14 @@
 				$result = 0;
 				$sql ="SELECT * FROM postas WHERE klase='".$klases[$i]."'";
 				$result2 = $conn->query($sql);
-
-				echo "<h2>".ucfirst($klases[$i])."</h2>";
+				if($klases[$i]=="treciokams")
+				{
+					$klase="trečiokams";
+				}
+				else{
+					$klase=$klases[$i];
+				}
+				echo "<h2>".ucfirst($klase)."</h2>";
 				echo "<div class='skyriusBoard'>";
 					FillKonspektusByKlase($conn, $klases[$i], $skyrius);					 
 				echo "</div>";

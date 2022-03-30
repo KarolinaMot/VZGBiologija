@@ -18,8 +18,31 @@
 			$result = 0;
 			$sql ="SELECT * FROM postas WHERE Skyrius='".$skyriai[$i]."'";
 			$result2 = $conn->query($sql);
+			switch($skyriai[$i]){
+				case "lastele":
+					$skyrius = "Ląstelė";
+					break;
+				case "paveldejimas":
+					$skyrius = "Organizmų paveldėjimas";
+					break;
+				case "apykaita":
+					$skyrius = "Medžiagų apykaita ir pernaša";
+					break;
+				case "sveikata":
+					$skyrius = "Žmogaus sveikata";
+					break;
+				case "homeostaze":
+					$skyrius = "Homeostazė ir valdymas";
+					break;
+				case "evoliucija":
+					$skyrius = "Evoliucija ir sistematika";
+					break;
+				case "ekologija":
+					$skyrius = "Ekologija";
+					break;
+			}
 
-			echo "<h2>".ucfirst($skyriai[$i])."</h2>";
+			echo "<h2>".ucfirst($skyrius)."</h2>";
 			echo "<div class='skyriusBoard'>";
 				FillKonspektusBySkyrius($conn, $skyriai[$i], $klase);					 
 			echo "</div>";

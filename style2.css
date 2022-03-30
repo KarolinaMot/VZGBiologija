@@ -83,7 +83,7 @@ article{
 
 .wrap{
   padding:100px;
-  margin-top:-100px;
+  margin-top:-150px;
 }
 
 
@@ -96,14 +96,15 @@ article{
   .skyriusCover h3{ font-size: 4vw !important; margin-top:4vh !important; margin-bottom: 4vh !important;}
   .klasesCover h3{ font-size: 4vw !important; margin-top:4vh !important; margin-bottom: 4vh !important;}
   .skyriusBoard{margin-top:0vh;}
-  .wrap{padding:30px !important;}
+  .wrap{padding:30px !important; margin-top:-10px !important;}
+  .wrap:first-child{ margin-top:-60px !important;}
   .header h1{font-size: 20px !important;}
   .skyriusCover h3{padding-top: 25px !important; }
   .klasesCover h3{padding-top: 35px !important}
   .wrap{margin-left: -40px; width:90%;}
   .classWrap{margin-top:10px;}
   #logout{margin-top:110px;}
-  .konspektasCard{width:inherit !important;}
+  .konspektasCard{width:inherit !important; margin-left: 0 !important;}
   .konspektaiAdmin2 table, button{
     font-size: 12px;
   }
@@ -112,8 +113,7 @@ article{
 
 @media only screen and (max-width: 600px){
   h1{font-size: 35px !important; margin-left: -50px !important;}
-  .wrap{margin-left: -60px; margin-top:5px; width:90%;}
-  .skyriusWrap{margin-top:-70px !important;}
+  .wrap{margin-left: -60px; margin-top:-15px !important; width:90%;}
   .loginWrap{margin-top:-70px !important; margin-left:-50px !important;}
   .loginWrap .loginBoard{margin-left:30px;}
   .wrap h2{font-size: 20px;}
@@ -123,8 +123,7 @@ article{
   .adminBoard2{margin-top:50px !important; margin-left: -23px; width:100%;}
   .adminBoard2:first-child{margin-top:-50px;}
   #logout{margin-top:10px !important;}
-  .adminWrap h3{margin-top:-60px; margin-left: 40px;}
-  .konspektasCard{width:inherit !important;}
+  .konspektasCard{width:inherit !important; margin-left: 0 !important;}
 }
 
 @media only screen and (max-width: 1000px){
@@ -134,7 +133,7 @@ article{
 }
 /*#endregion*/
 
-/*#region ----------------------------------------KONSPEKTAS CARD--------------------------------------------*/
+/*#region ----------------------------------------KONSPEKTAS CARD----------------------------------------*/
 .konspektasCover {
   background-image: url("Images/Klases2.jpg");
   background-attachment: fixed;
@@ -153,8 +152,10 @@ article{
   padding:15px;
   padding-bottom:20px;
   border-radius:10px;
-  width: 15%;
+  width: 16%;
   display: inline-block;
+  margin-top: 20px;
+  margin-left: 10px;
 }
 
 .konspektasCard p{
@@ -311,7 +312,7 @@ article{
     border-radius: 25px;
     padding: 35px;
     display: flex;
-    padding-top: 60px;
+    padding-top: 80px;
   }
 
   .adminBoard2:first-child{
@@ -335,8 +336,26 @@ article{
     white-space: nowrap;
   }
 
+  .kurtiPosta{
+    max-height: 320px;
+  }
+
   #logout:hover{
     background-color: rgb(98, 18, 38);
+  }
+
+  #kurti{
+    background-color: rgba(98, 18, 38, 0);
+    color: white;
+    border: 1px whitesmoke solid;
+    border-radius: 15px;
+    padding: 15px;
+    transition: all 0.3s ease;
+  }
+
+  #kurti:hover{
+    background-color: whitesmoke;
+    color:black;
   }
 
   #keisti{
@@ -599,6 +618,7 @@ article{
   margin-left: 15px;
   position: absolute;
   white-space: nowrap;
+
 }
 
 .navlist li{
@@ -619,6 +639,7 @@ article{
   padding:5px;
   transition: all 0.3s ease;
   border-radius:15px;
+  font-family: 'Nunito', sans-serif;
 }
 
 .navlist li a:hover{
@@ -794,7 +815,7 @@ article{
   color: white;
 }
 
-#filterBoard.active .searchForm{
+#filterBoard.active .filterForm{
   opacity: 100;
 }
 
@@ -832,6 +853,8 @@ article{
   border: 1px solid white;
   border-radius:15px;
   background-color: whitesmoke;
+  margin-left: 130px !important;
+  position: relative;
 }
 
 .searchBar input{
@@ -856,8 +879,9 @@ outline: none;
   color: white;
   height:inherit !important;
   border: 5px solid #202124;
-  margin-left: -15%;
 }
+
+
 
 /*#endregion*/
 

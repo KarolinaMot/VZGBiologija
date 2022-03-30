@@ -1,8 +1,8 @@
 ﻿<?php
 	include_once "../PostasCode.php";
 
-	if(isset($_GET['article'])){
-		$pavadinimas = $_GET['article'];
+	if(isset($_POST['trinti'])){
+		$pavadinimas = $_POST['trinti'];
 		DeletePost($conn, $pavadinimas);
 	}
 	else{

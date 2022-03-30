@@ -71,6 +71,9 @@ if (session_status() === PHP_SESSION_NONE) {
                             case 'admin':
                                 include "admin.php";
                                 break;
+                            case 'article':
+                                include "article.php";
+                                break;
                             default:
                             include "pradzia.php";
                             break;

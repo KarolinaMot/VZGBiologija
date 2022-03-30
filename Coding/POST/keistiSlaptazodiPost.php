@@ -10,12 +10,12 @@ if(isset($_POST['keistiSlaptazodi'])){
 		KeistiSlaptazodi($conn, $slaptazodis1, $vardas);
 		echo "<script type='text/javascript'>
 				alert('Slaptazodis pakestas :)');
-				location='../../admin.php';
+				location='../../index.php?puslapis=admin';
 				</script>";
 	}
 	else{
 		echo "<script type='text/javascript'>
-				alert('Slaptaûodûiai nesutampa :(');
+				alert('Slapta≈æod≈æiai nesutampa :(');
 				location='../../admin.php';
 				</script>";
 	}
