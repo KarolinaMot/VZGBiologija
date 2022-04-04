@@ -1,5 +1,5 @@
 
-<div class="wrap" >
+<div class="wrap" data-aos="fade-up"  data-aos-easing="ease-in-out"  data-aos-duration="500" data-aos-offset="10" style="margin-top:-200px;" >
     <h2>Klasės</h2>
     <div class="skyriusBoard">
         <div class="oneRow">
@@ -18,7 +18,7 @@
         </div>
     </div>
 </div>
-<div class="wrap">
+<div class="wrap" data-aos="fade-up"  data-aos-easing="ease-in-out"  data-aos-duration="500" data-aos-offset="10">
                     <h2>Skyriai</h2>
                     <div class="skyriusBoard">
                         <div class="oneRow">

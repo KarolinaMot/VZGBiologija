@@ -5,14 +5,6 @@
 		}
 	</style>
 	
-	<script>
-		//document.location.reload(true);
-		function Filter(){
-			let filterBoard = document.getElementById("filterBoard");
-			filterBoard.classList.toggle("active");
-		}
-	</script>
-	
 	<?php include_once "Coding/SkyriusCode.php";
 		  include_once "Coding/PostasCode.php";
 		  if(!$_SESSION['prisijunges'] || !isset($_SESSION['prisijunges'] )){
@@ -20,8 +12,14 @@
 		  }
 	?>
 	
-	<div class="wrap adminWrap">
-		<h3>Paskyros administravimas:</h3><br>
+	<div class="wrap adminWrap" data-aos="fade-up" data-aos-duration="500" data-aos-offset="10" style="margin-top:-250px;">
+		<a class="adminTab" href="#konspektas" data-aos="fade-up" data-aos-duration="500" data-aos-offset="10"><i class="icon-add" class="wrap adminWrap" data-aos="fade-up" data-aos-duration="500" data-aos-offset="10"></i><span>Konspektų administravimas</span></a>
+		<a class="adminTab" href="#paskyra" data-aos="fade-up" data-aos-duration="500" data-aos-offset="10"><i class="icon-user" class="wrap adminWrap" data-aos="fade-up" data-aos-duration="500" data-aos-offset="10"></i><span>Paskyros administravimas</span></a>
+		<?php if($_SESSION['galiKurti'] ){?>
+			<a class="adminTab" href="#naujaPaskyra" data-aos="fade-up" data-aos-duration="500" data-aos-offset="10"><i class="icon-user" class="wrap adminWrap" data-aos="fade-up" data-aos-duration="500" data-aos-offset="10"></i><span>Kurti paskyrą</span></a>
+		<?php }?>
+
+		<h3 id="paskyra" style="margin-top:100px">Paskyros administravimas:</h3><br>
 		<div class="adminBoard">
 			<div class="adminBoard2"> 
 				<form action="Coding/POST/atsijungtiPost.php" method="post">
@@ -43,8 +41,30 @@
 			</div>
 		</div>
 	</div>
+	<?php if($_SESSION['galiKurti'] ){?>
+	<div class="wrap adminWrap" id="naujaPaskyra" data-aos="fade-up" data-aos-duration="500" data-aos-offset="10">
+		<h3  style="margin-top:100px">Kurti naują paskyrą:</h3><br>
+		<div class="adminBoard">
+			<div class="adminBoard2">
+					<form action="Coding/POST/kurtiPaskyra.php" method="post" class="registerForm">
+						<p>Slapyvardis: </p>
+						<input type="text" class="form-control" id="slapyvardis" name="slapyvardis" placeholder="Įveskite slapyvardį" style="width:100%;"> 
+						<p>Slaptažodis: </p>
+						<input type="password" class="form-control" id="slaptazodis" name="slaptazodis" placeholder="Įveskite naują slaptažodį" style="width:100%;">
+						<p>Pakartokite slaptažodį:</p>
+						<input type="password" class="form-control" id="kartotiSlaptazodi" name="kartotiSlaptazodi" placeholder="Įveskite naują slaptažodį" style="width:100%;"><br> <br>
+						<label for="galiKurti">Gali kurti naujas paskyras:</label>
+						<input type="checkbox" class="form-control" id="galiKurti" name="galiKurti">
+						<br>
+						<button id="register" type="submit" name="register" style="width: 100%;">Kurti paskyrą</button>
+					</form>
+			</div>
+		</div>
+	</div>
+	<?php }?>
+
 	<br><br>
-	<div class="wrap adminWrap">
+	<div class="wrap adminWrap" id="konspektas" data-aos="fade-up" data-aos-duration="500" data-aos-offset="10"	>
 		<h3 >Konspektų administravimas:</h3><br>
 		<div class="adminBoard konspektaiAdmin">
 			<div class="adminBoard2 konspektaiAdmin2 kurtiPosta">
@@ -120,4 +140,10 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		function Filter(){
+			let filterBoard = document.getElementById("filterBoard");
+			filterBoard.classList.toggle("active");
+		}
+	</script>
 

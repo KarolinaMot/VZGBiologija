@@ -8,7 +8,8 @@
 				location='index.php';
 				</script>";
 		}
-	$skyrius = $_GET['skyrius'];?>
+	$skyrius = $_GET['skyrius'];
+	?>
 
 <div class="wrap">
 	<?php
@@ -24,9 +25,11 @@
 				else{
 					$klase=$klases[$i];
 				}
-				echo "<h2>".ucfirst($klase)."</h2>";
+				echo "<div data-aos='fade-up'  data-aos-easing='ease-in-out' data-aos-duration='500' data-aos-offset='10'>";
+				echo "<h2 >".ucfirst($klase)."</h2>";
 				echo "<div class='skyriusBoard'>";
 					FillKonspektusByKlase($conn, $klases[$i], $skyrius);					 
+				echo "</div>";
 				echo "</div>";
 				echo "<br><br>";
 					

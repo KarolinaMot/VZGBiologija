@@ -32,11 +32,12 @@ FOREIGN KEY (SkyriusID) references Skyrius(ID),
 FOREIGN KEY (KlaseID) references Klase(ID)
 );
 
+DROP TABLE Admins;
 CREATE TABLE Admins(
 ID int primary key auto_increment,
 Vardas varchar(45),
 Slaptazodis varchar(100),
-SaugusSlap bool
+GaliKurti bool
 );
 
 CREATE TABLE klase(
@@ -46,5 +47,5 @@ Pavadinimas varchar(45)
 
 select * FROM postas;
 
-INSERT INTO Admins(Vardas, Slaptazodis, SaugusSlap) VALUES ("DaivaP", "DaivaP", false);
-INSERT INTO Admins(Vardas, Slaptazodis, SaugusSlap) VALUES ("KarolinaM", "KarolinaM", false);
+INSERT INTO Admins(Vardas, Slaptazodis, GaliKurti) VALUES ("DaivaP", "DaivaP", false);
+INSERT INTO Admins(Vardas, Slaptazodis, GaliKurti) VALUES ("KarolinaM", "KarolinaM", true);

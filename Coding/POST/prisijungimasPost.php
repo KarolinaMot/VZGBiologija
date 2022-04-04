@@ -9,6 +9,7 @@ if(isset($_POST['prisijungti'])){
 	if($result2 == true){
 		$_SESSION['prisijunges'] =true;
 		$_SESSION['slapyvardis'] =$vardas;
+		
 		echo "<script type='text/javascript'>
 				alert('Sekmingai prisijungėte :)');
 				location='../../index.php';

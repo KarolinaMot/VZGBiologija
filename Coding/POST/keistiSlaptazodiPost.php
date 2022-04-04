@@ -9,7 +9,7 @@ if(isset($_POST['keistiSlaptazodi'])){
 	if($slaptazodis1==$slaptazodis2){
 		KeistiSlaptazodi($conn, $slaptazodis1, $vardas);
 		echo "<script type='text/javascript'>
-				alert('Slaptazodis pakestas :)');
+				alert('Slaptazodis pakeistas :)');
 				location='../../index.php?puslapis=admin';
 				</script>";
 	}

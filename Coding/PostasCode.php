@@ -39,12 +39,16 @@ function SelectPostasID($conn, $pavadinimas){
 
 function InsertToPostas($conn, $pavadinimas, $klaseID, $klase, $failas, $skyriusID, $skyrius){
 
+
 	$sql = "INSERT INTO postas (Pavadinimas, Failas, KlaseID, SkyriusID, Skyrius, Klase)
 	VALUES ('".$pavadinimas."','".$failas."','".$klaseID."','".$skyriusID."','".$skyrius."','".$klase."')";
 
     if (mysqli_query($conn, $sql)) {
 		 echo '<script>alert("Postas sėkmingai sukurtas")</script>';
 	}
+	else{
+		echo '<script>alert("MYSQL klaida.")</script>';
+   }
 }
 
 function SearchByClass($conn, $klase){
@@ -62,8 +66,8 @@ function SearchBySkyrius($conn, $skyrius){
     return $result;
 }
 
-function SearchByKlase($conn, $klase){
-	$sql = "SELECT * FROM postas WHERE klase='".$klase."'";
+function SearchByKlaseAndSkyrius($conn, $klase, $skyrius){
+	$sql = "SELECT * FROM postas WHERE Klase='".$klase."'AND Skyrius='".$skyrius."'";
     $result = $conn->query($sql);
     
     return $result;
@@ -83,7 +87,7 @@ function SearchByPavadinimas($conn, $pavadinimas){
 
 function FillKonspektusBySkyrius($conn, $skyrius, $klase){
 
-    $result = SearchBySkyrius($conn, $skyrius);
+    $result = SearchByKlaseAndSkyrius($conn, $klase, $skyrius);
 	switch($skyrius){
 		case "lastele":
 			$skyrius = "Ląstelė";
@@ -109,22 +113,19 @@ function FillKonspektusBySkyrius($conn, $skyrius, $klase){
 	}
 
 	while($row = $result->fetch_assoc()){
-		if($row["Klase"] == $klase){
 			echo '<div class="konspektasCard">
 			<div class="konspektasCover"><h3><h3>'.$row["Pavadinimas"].'</h3></h3></div>
 			<p><b>Skyrius: </b>'.$skyrius.'</p>
 			<p><b>Klasė: </b>'.ucfirst($klase).'</p>
 			<a href="index.php?puslapis=article&article='.$row["Pavadinimas"].'"><button>Plačiau</button></a>
 			</div>';
-		}			
+				
 	}
 }
 
 function FillKonspektusByKlase($conn, $klase, $skyrius){
 
-    $result = SearchByKlase($conn, $klase);
-	echo "<script>alert('".$klase."');</script>";
-	echo "<script>alert('vykdoma');</script>";
+    $result = SearchByKlaseAndSkyrius($conn, $klase, $skyrius);
 	switch($skyrius){
 		case "lastele":
 			$skyrius = "Ląstelė";
@@ -149,8 +150,6 @@ function FillKonspektusByKlase($conn, $klase, $skyrius){
 			break;
 	}
 	while($row = $result->fetch_assoc()){
-		if($row["Skyrius"] == $skyrius){
-			echo "<script>alert('rasta');</script>";
 			if($klase == "treciokams"){
 				$klase="trečiokams";
 			}
@@ -161,9 +160,50 @@ function FillKonspektusByKlase($conn, $klase, $skyrius){
 				  	<div class="konspektasCover"><h3><h3>'.$row["Pavadinimas"].'</h3></h3></div>
 					<p><b>Skyrius: </b>'.$skyrius.'</p>
 					<p><b>Klasė: </b>'.ucfirst($klase).'</p>
-					<a href="index.php"><button>Plačiau</button></a>
-				  </div>';
-		}			
+					<a href="index.php?puslapis=article&article='.$row["Pavadinimas"].'"><button>Plačiau</button></a>
+					</div>';		
+	}
+}
+
+function FillKonspektusBySearch($conn, $result){
+
+	while($row = $result->fetch_assoc()){
+			
+			switch($row["Skyrius"]){
+				case "lastele":
+					$skyrius = "Ląstelė";
+					break;
+				case "paveldejimas":
+					$skyrius = "Organizmų paveldėjimas";
+					break;
+				case "apykaita":
+					$skyrius = "Medžiagų apykaita ir pernaša";
+					break;
+				case "sveikata":
+					$skyrius = "Žmogaus sveikata";
+					break;
+				case "homeostaze":
+					$skyrius = "Homeostazė ir valdymas";
+					break;
+				case "evoliucija":
+					$skyrius = "Evoliucija ir sistematika";
+					break;
+				case "ekologija":
+					$skyrius = "Ekologija";
+					break;
+			}
+			if($row["Klase"] == "treciokams"){
+				$klase="trečiokams";
+			}
+			else{
+				$klase =$row["Klase"];
+			}
+			echo '<div class="konspektasCard">
+				  	<div class="konspektasCover"><h3><h3>'.$row["Pavadinimas"].'</h3></h3></div>
+					<p><b>Skyrius: </b>'.$skyrius.'</p>
+					<p><b>Klasė: </b>'.ucfirst($klase).'</p>
+					<a href="index.php?puslapis=article&article='.$row["Pavadinimas"].'"><button>Plačiau</button></a>
+					</div>';		
 	}
 }
 

@@ -28,6 +28,23 @@ header h1 {
   right: 0;
 }
 
+#indexSearch{
+  width:30%;
+  position: absolute !important;
+  right:10%;
+}
+
+footer{
+  height:100px;
+  font-family: 'Nunito', sans-serif;
+  color:white;
+  background-color:#41414f;
+  padding: 30px;
+}
+
+footer small{
+  margin-top:70px !important;
+}
 /*#region ----------------------------------------STRUCTURE----------------------------------------------*/
 body, html{
   background-color: white;
@@ -83,7 +100,7 @@ article{
 
 .wrap{
   padding:100px;
-  margin-top:-150px;
+  margin-top:-140px;
 }
 
 
@@ -96,7 +113,7 @@ article{
   .skyriusCover h3{ font-size: 4vw !important; margin-top:4vh !important; margin-bottom: 4vh !important;}
   .klasesCover h3{ font-size: 4vw !important; margin-top:4vh !important; margin-bottom: 4vh !important;}
   .skyriusBoard{margin-top:0vh;}
-  .wrap{padding:30px !important; margin-top:-10px !important;}
+  .wrap{padding:30px !important; margin-top:-50px !important;}
   .wrap:first-child{ margin-top:-60px !important;}
   .header h1{font-size: 20px !important;}
   .skyriusCover h3{padding-top: 25px !important; }
@@ -108,12 +125,13 @@ article{
   .konspektaiAdmin2 table, button{
     font-size: 12px;
   }
+  #indexSearch{right:18% !important; width:50% !important;}
 
 }
 
 @media only screen and (max-width: 600px){
   h1{font-size: 35px !important; margin-left: -50px !important;}
-  .wrap{margin-left: -60px; margin-top:-15px !important; width:90%;}
+  .wrap{margin-left: -60px; margin-top:-30px !important; width:90%;}
   .loginWrap{margin-top:-70px !important; margin-left:-50px !important;}
   .loginWrap .loginBoard{margin-left:30px;}
   .wrap h2{font-size: 20px;}
@@ -124,6 +142,7 @@ article{
   .adminBoard2:first-child{margin-top:-50px;}
   #logout{margin-top:10px !important;}
   .konspektasCard{width:inherit !important; margin-left: 0 !important;}
+  #indexSearch{right:18% !important; width:50% !important;}
 }
 
 @media only screen and (max-width: 1000px){
@@ -156,8 +175,12 @@ article{
   display: inline-block;
   margin-top: 20px;
   margin-left: 10px;
+  transition: 0.2s ease;
 }
 
+.konspektasCard:hover{
+  transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
 .konspektasCard p{
   color: whitesmoke;
   font-family: 'Nunito', sans-serif;
@@ -286,7 +309,37 @@ article{
 /*#endregion*/
 
 /*#region ----------------------------------------ADMIN--------------------------------------------------*/
-  #logout{
+.adminTab{
+  padding:10px;
+  margin-left:15px;
+  border: whitesmoke 2px solid;
+  border-radius: 15px;
+  background-color: #262626;
+  color:white;
+  font-family: 'Nunito', sans-serif;
+  display: inline-block;
+  line-height:25px;
+  text-decoration: none;
+  transition: all 0.3s a
+}  
+
+.adminTab:hover{
+  background-color: white;
+  color: black;
+
+}
+
+.adminTab i{
+  font-size: 25px;
+  line-height:25px;
+}
+
+.adminTab span{
+  margin-left: 10px;
+  line-height:25px;
+}
+
+#logout{
     width: inherit;
     padding:15px;
     background-color: rgba(98, 18, 38, 0);
@@ -294,7 +347,7 @@ article{
     margin-bottom: auto;
     color: white;
     border: solid 1px whitesmoke;
-    border-radius: 15px;
+    border-radius: 5px;
     margin-top: 130px;
     transition:all 0.3s ease;
   }
@@ -377,6 +430,25 @@ article{
     color: black;
   }
 
+  #register{
+    width: inherit;
+    padding:15px;
+    background-color:rgba(26, 103, 44, 0);
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    border: solid 1px whitesmoke;
+    border-radius: 15px;
+    margin-top: 15px;
+    transition:all 0.3s ease;
+    margin-top: 40px;
+  }
+
+  #register:hover{
+    background-color:whitesmoke;
+    color: black;
+  }
+
   .accountForm input{
     font-size:15px;
     padding:5px;
@@ -388,6 +460,31 @@ article{
     background-color: #32353c;
     color: white;
     border: solid 1px whitesmoke;
+  }
+
+  .registerForm input{
+    font-size:15px;
+    padding:5px;
+    border-radius:15px;
+    margin-top:-10px;
+    margin-left: -5px;
+    font-family: 'Nunito', sans-serif;
+    background-color: #32353c;
+    color: white;
+    border: solid 1px whitesmoke;
+  }
+
+  .registerForm label{
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+  }
+
+  .registerForm #galiKurti {
+    height: 25px;
+    width: 25px;
+    margin-left: 15px;
+    margin-top: 2px;
+    position: absolute;
   }
 
   .kurtiForm input{
@@ -495,11 +592,17 @@ article{
 
 .skyriusCard{
   background-color: #262626;
-  padding:10px;
+  padding:15px;
   padding-bottom:20px;
   border-radius:10px;
-  width: calc(25% - 30px);
+  width: calc(25% - 40px);
   display: inline-block;
+  transition: 0.2s ease;
+  margin:3px;
+}
+
+.skyriusCard:hover{
+  transform: scale(1.05); 
 }
 
 .skyriusCover {
@@ -607,6 +710,49 @@ article{
 /*#endregion*/
 
 /*#region ----------------------------------------SIDEBAR LIST-------------------------------------------*/
+#searchSidebar{
+  width:95%;
+  border:2px white solid;
+  border-radius: 15px;
+  margin-top: 5px;
+  margin-left:-15px;
+  opacity: 0;
+  transition: all 0.7s ease;
+}
+
+#sidebar.active #searchSidebar{
+  opacity: 100;
+}
+
+#sidebarSearchBtn{
+  color: white;
+  transition: all 0.3s ease;
+  background-color: #202124;
+  border: none;
+  margin-top:5px;
+}
+
+#sidebar.active #sidebarSearchBtn i{
+  font-size:20px;
+  margin-left:15px;
+  padding:10px;
+  border-radius: 25px;
+
+}
+
+#searchLi{
+  transition: all 0.7s ease;
+}
+
+#sidebar.active #searchLi{
+  margin-top: -5px;
+}
+
+#sidebar.active #searchIcon:hover{
+  background-color: white;
+  color: black;
+}
+
 .navlist{
   position: absolute;
   margin-top: 70px;
@@ -618,6 +764,7 @@ article{
   margin-left: 15px;
   position: absolute;
   white-space: nowrap;
+  transition: all 0.7s ease;
 
 }
 
@@ -629,6 +776,7 @@ article{
 
 .navlist li i{
   font-size: 40px;
+  transition: 0.7s all ease;
 }
 
 .navlist li a{
@@ -889,11 +1037,11 @@ outline: none;
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?ytje9m');
-  src:  url('fonts/icomoon.eot?ytje9m#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?ytje9m') format('truetype'),
-    url('fonts/icomoon.woff?ytje9m') format('woff'),
-    url('fonts/icomoon.svg?ytje9m#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?wblurb');
+  src:  url('fonts/icomoon.eot?wblurb#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?wblurb') format('truetype'),
+    url('fonts/icomoon.woff?wblurb') format('woff'),
+    url('fonts/icomoon.svg?wblurb#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -913,10 +1061,12 @@ outline: none;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-add:before {
+  content: "\e90c";
+}
 .icon-filter:before {
   content: "\e90b";
 }
-
 .icon-search:before {
   content: "\e90a";
 }
@@ -950,6 +1100,7 @@ outline: none;
 .icon-evolution:before {
   content: "\e908";
 }
+
 
 /* #endregion*/
   

@@ -9,19 +9,10 @@ function TikrintiDuomenis($conn, $vardas, $slaptazodis){
     if ($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
 		if($row['Vardas']==$vardas){
-			if($row['SaugusSlap']==false){
-				if($row['Slaptazodis']==$slaptazodis){
-					$_SESSION['saugus'] = $row['SaugusSlap'];
-					return true;
-				}
+			if(password_verify($slaptazodis, $row['Slaptazodis'])){
+				$_SESSION['galiKurti'] =$row['GaliKurti'];
+				return true;
 			}
-			else{
-				if(password_verify($slaptazodis, $row['Slaptazodis'])){
-					$_SESSION['saugus'] = $row['SaugusSlap'];
-					return true;
-				}
-			}
-			
 		}
       }
     }
@@ -34,18 +25,12 @@ function KeistiSlaptazodi($conn, $slaptazodis, $vardas){
 	$ID = RastiID($vardas, $conn);
 
 	$sql = "UPDATE Admins SET Slaptazodis='".$naujasSlaptazodis."' WHERE ID='".$ID."'";
-	$sql2 = "UPDATE Admins SET SaugusSlap=true WHERE ID='".$ID."'";
 
 	if (mysqli_query($conn, $sql)) {
-		if (mysqli_query($conn, $sql2)) {}
-		else {echo '<script>alert("Ups, kaûkas negerai su serveriu")</script>';}
+		
 	} else {
-		echo '<script>alert("Ups, kaûkas negerai su serveriu")</script>';
+		echo '<script>alert("Ups, ka≈ækas negerai su serveriu"); location="../../index.php?puslapis=admin"</script>';
 	}
-
-	
-
-
 }
 
 function RastiID($vardas, $conn){
@@ -60,5 +45,19 @@ function RastiID($vardas, $conn){
       }
     }
 	return;
+}
+
+function Registruoti($conn, $vardas, $slaptazodis, $galiKurti){
+	$naujasSlaptazodis = password_hash($slaptazodis, PASSWORD_DEFAULT);
+		if($galiKurti)
+		$galiKurti = 1;
+		else
+		$galiKurti =0;
+	$sql = "INSERT INTO Admins (Vardas, Slaptazodis, GaliKurti) VALUES ('".$vardas."','".$slaptazodis."','".$galiKurti."')";
+
+	if (mysqli_query($conn, $sql)) {
+	} else {
+		echo '<script>alert("Ups, ka≈ækas negerai su serveriu"); location="../../index.php?puslapis=admin"</script>';
+	}
 }
 ?>

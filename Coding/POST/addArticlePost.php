@@ -32,25 +32,27 @@ if (isset($_POST['postas']))
 
           if(move_uploaded_file($fileTmpPath, $dest_path)) 
           {
-            $message ='File is successfully uploaded.';
             $ikelta = true;
           }
           else 
           {
             echo "<script>alert('There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.');</script>";
-            $message = 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.';
+            $ikelta = false;
+
           }
         }
         else
         {
-          $message = "Ikeltas failas nera .pdf";
           echo "<script>alert('Ikeltas failas nera .pdf');</script>";
+          $ikelta = false;
+
         }
       }
       else
       {
-        $message = 'Kažkas ne taip su įkeltu failu.<br>';
-        echo "<script>alert('ERROR');</script>";
+        echo "<script>alert('Kažkas ne taip su įkeltu failu');</script>";
+        $ikelta = false;
+
       }
 
       $array = SearchByPavadinimas($conn, $pavadinimas);
@@ -64,7 +66,7 @@ if (isset($_POST['postas']))
       {
           echo "<script type='text/javascript'>
 				alert('Postas nesukurtas :(');
-				location='../../index.php';
+				location='../../index.php?puslapis=admin';
 				</script>";
       }
       else{

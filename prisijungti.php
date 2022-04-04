@@ -2,7 +2,7 @@
 <style>
 
 </style>
-<div class="wrap loginWrap">
+<div class="wrap loginWrap" data-aos="fade-up"  data-aos-easing="ease-in-out"  data-aos-duration="500" data-aos-offset="10">
 	<h3>Prisijunkite</h3>
 	<div class="loginBoard">
 		<form action="Coding/POST/prisijungimasPost.php" method="post" class="loginForm">
@@ -13,7 +13,6 @@
 			<br><br>
 			<button type="submit" id="login2" name="prisijungti">Prisijungti</button>
 			<br><br>
-			<a href="#">Neturite paskyros?</a>
 		</form>
 	</div>
 </div>
